@@ -3,7 +3,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/../config/database.php';
 use Vagrant\Lesson6\Models\Category;
 use Vagrant\Lesson6\Models\Post;
-
+/*Creating categories*/
 //$cat1 = new Category();
 //$cat1->title = 'Notebooks';
 //$cat1->slug = 'notebook';
@@ -24,8 +24,11 @@ use Vagrant\Lesson6\Models\Post;
 //$cat5->title = 'Accessories';
 //$cat5->slug = 'accessories';
 //$cat5->save();
-
+/*Update Category*/
 //$update_cat = Category::find(2);
 //$update_cat->title = 'Netbook';
 //$update_cat->slug = 'netbook';
 //$update_cat->save();
+/*Delete categories 1-6*/
+//Category::destroy([1,2,3,4,5,6]);
+//print_r($cat1->get());
