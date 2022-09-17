@@ -38,6 +38,7 @@ use Vagrant\Lesson6\Models\Post;
 //    'category_id' => 1
 //]);
 $posts = new Post();
+/*Creating Post*/
 //$posts->title = 'Asus Taf Gaming F17';
 //$posts->slug = 'asus_taf_gaming_f17';
 //$posts->body = 'notebook Asus Taf Gaming';
@@ -78,5 +79,10 @@ $posts = new Post();
 //$posts->slug = 'bluetooth-aux-mp3-wav-adapter-resiver-magnitoly';
 //$posts->body = 'Bluetooth AUX MP3 WAV адаптер, ресивер магнітоли';
 //$posts->category_id = 4;
+/*Update eighth post*/
+//$posts = Post::find(8);
+//$posts->title = 'Перехідник Baseus Exquisite Type-C';
+//$posts->slug = 'perehodnik-baseus-exquisite-type-c-male-to-usb';
+//$posts->body = 'Перехідник Baseus Exquisite Type-C';
 $posts->save();
 //print_r($cat1->get());
