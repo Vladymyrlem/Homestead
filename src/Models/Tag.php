@@ -1,9 +1,13 @@
 <?php
+
 namespace Vagrant\Lesson6\Models;
+
 use Illuminate\Database\Eloquent\Model;
+
 class Tag extends Model
 {
-    public function post(){
+    public function post()
+    {
         return $this->belongsToMany(Post::class);
     }
 }

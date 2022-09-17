@@ -1,9 +1,11 @@
 <?php
-require_once __DIR__.'/../vendor/autoload.php';
-require_once __DIR__.'/../config/database.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../config/database.php';
+
 use Vagrant\Lesson6\Models\Category;
 use Vagrant\Lesson6\Models\Post;
 use Vagrant\Lesson6\Models\Tag;
+
 /*Creating categories*/
 $cats = Category::all();
 //$cat1 = new Category();
@@ -131,11 +133,11 @@ $new_tag = new Tag();
 //$post1->tag()->attach([7,8,14]);
 //$post1 = Post::find(9);
 //$post1->tag()->attach([7,14,17]);
-foreach ($posts as $post){
-    echo '<h3>'.$post->id.' - '.$post->title.'</h3>';
+foreach ($posts as $post) {
+    echo '<h3>' . $post->id . ' - ' . $post->title . '</h3>';
     echo '<ol>';
-    foreach ($post->tag as $tag){
-        echo '<li>'.$tag->title.'</li>';
+    foreach ($post->tag as $tag) {
+        echo '<li>' . $tag->title . '</li>';
     }
     echo '</ol>';
 }
