@@ -24,3 +24,8 @@ use Vagrant\Lesson6\Models\Post;
 //$cat5->title = 'Accessories';
 //$cat5->slug = 'accessories';
 //$cat5->save();
+
+//$update_cat = Category::find(2);
+//$update_cat->title = 'Netbook';
+//$update_cat->slug = 'netbook';
+//$update_cat->save();
