@@ -8,6 +8,6 @@ public function category(){
 }
     public function tag()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 }

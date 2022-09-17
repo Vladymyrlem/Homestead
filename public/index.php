@@ -90,8 +90,8 @@ $posts = Post::all();
 /*Delete post number 10*/
 //Post::destroy([10]);
 /*Creating Tags*/
-//$tags = Tag::all();
-$tags = new Tag();
+$tags = Tag::all();
+$new_tag = new Tag();
 //$tags->title = 'Notebook';
 //$tags->slug = 'notebook';
 //$tags->title = 'Phone';
@@ -111,16 +111,31 @@ $tags = new Tag();
 //$tags->title = 'Power';
 //$tags->slug = 'power';
 //$tags->title = '';
+/*Creating Post Tags*/
+//$post1 = Post::find(1);
+//$post1->tag()->attach([1.10,11]);
+//$post1 = Post::find(2);
+//$post1->tag()->attach([2,3,13]);
+//$post1 = Post::find(3);
+//$post1->tag()->attach([2,4,13]);
+//$post1 = Post::find(4);
+//$post1->tag()->attach([5,12,15]);
+//$post1 = Post::find(5);
+//$post1->tag()->attach([6,13,15]);
+//$post1 = Post::find(6);
+//$post1->tag()->attach([12,16,14]);
+//$post1 = Post::find(7);
+//$post1->tag()->attach([4,7,8]);
+//$post1 = Post::find(8);
+//$post1->tag()->attach([7,8,14]);
+//$post1 = Post::find(9);
+//$post1->tag()->attach([7,14,17]);
 foreach ($posts as $post){
-    echo '<h3>'.$post->id.'-'.$post->title.'</h3><br>';
-//foreach ($post->category as $cat){
-//    echo $cat->title.'-'.$cat->slug;
-//}
+    echo '<h3>'.$post->id.' - '.$post->title.'</h3>';
     echo '<ol>';
     foreach ($post->tag as $tag){
         echo '<li>'.$tag->title.'</li>';
     }
     echo '</ol>';
 }
-//$posts->save();
 //print_r($tags->get());
