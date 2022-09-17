@@ -103,6 +103,7 @@ $tags = Tag::all();
 $new_tag = new Tag();
 //$new_tag->title = 'Notebook';
 //$new_tag->slug = 'notebook';
+//$new_tag->save();
 //$tags->title = 'Phone';
 //$tags->slug = 'phone';
 //$tags->title = 'Iphone';
@@ -119,8 +120,6 @@ $new_tag = new Tag();
 //$tags->slug = 'accessories';
 //$tags->title = 'Power';
 //$tags->slug = 'power';
-//$tags->title = '';
-//$new_tag->save();
 
 /*Creating Post Tags*/
 //$post1 = Post::find(1);
