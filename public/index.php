@@ -92,8 +92,8 @@ $posts = Post::all();
 /*Creating Tags*/
 $tags = Tag::all();
 $new_tag = new Tag();
-$new_tag->title = 'Notebook';
-$new_tag->slug = 'notebook';
+//$new_tag->title = 'Notebook';
+//$new_tag->slug = 'notebook';
 //$tags->title = 'Phone';
 //$tags->slug = 'phone';
 //$tags->title = 'Iphone';
@@ -111,6 +111,7 @@ $new_tag->slug = 'notebook';
 //$tags->title = 'Power';
 //$tags->slug = 'power';
 //$tags->title = '';
+//$new_tag->save();
 /*Creating Post Tags*/
 //$post1 = Post::find(1);
 //$post1->tag()->attach([1.10,11]);
