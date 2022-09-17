@@ -3,7 +3,9 @@ require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/../config/database.php';
 use Vagrant\Lesson6\Models\Category;
 use Vagrant\Lesson6\Models\Post;
+use Vagrant\Lesson6\Models\Tag;
 /*Creating categories*/
+$cats = Category::all();
 //$cat1 = new Category();
 //$cat1->title = 'Notebooks';
 //$cat1->slug = 'notebook';
@@ -37,7 +39,8 @@ use Vagrant\Lesson6\Models\Post;
 //    'body' => 'notebook Asus Taf Gaming',
 //    'category_id' => 1
 //]);
-$posts = new Post();
+$posts = Post::all();
+//$posts = new Post();
 /*Creating Post*/
 //$posts->title = 'Asus Taf Gaming F17';
 //$posts->slug = 'asus_taf_gaming_f17';
@@ -84,5 +87,38 @@ $posts = new Post();
 //$posts->title = 'Перехідник Baseus Exquisite Type-C';
 //$posts->slug = 'perehodnik-baseus-exquisite-type-c-male-to-usb';
 //$posts->body = 'Перехідник Baseus Exquisite Type-C';
-$posts->save();
-//print_r($cat1->get());
+/*Delete post number 10*/
+//Post::destroy([10]);
+/*Creating Tags*/
+//$tags = Tag::all();
+$tags = new Tag();
+//$tags->title = 'Notebook';
+//$tags->slug = 'notebook';
+//$tags->title = 'Phone';
+//$tags->slug = 'phone';
+//$tags->title = 'Iphone';
+//$tags->slug = 'iphone';
+//$tags->title = 'Xiaomi';
+//$tags->slug = 'xiaomi';
+//$tags->title = 'Samsung';
+//$tags->slug = 'samsung';
+//$tags->title = 'Lenovo';
+//$tags->slug = 'lenovo';
+//$tags->title = 'Adapter';
+//$tags->slug = 'adapter';
+//$tags->title = 'Accessories';
+//$tags->slug = 'accessories';
+//$tags->title = 'Power';
+//$tags->slug = 'power';
+//$tags->title = '';
+//foreach ($posts as $post){
+ //   echo $post->id.'-'.$post->title.'<br>';
+//foreach ($post->category as $cat){
+//    echo $cat->title.'-'.$cat->slug;
+//}
+//    foreach ($post->tag as $cat){
+//        echo $cat->title;
+//    }
+//}
+//$posts->save();
+print_r($tags->get());

@@ -4,6 +4,10 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 public function category(){
-    return $this->hasMany(Category::class);
+    return $this->belongsToMany(Category::class);
 }
+    public function tag()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
