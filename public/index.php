@@ -111,14 +111,16 @@ $tags = new Tag();
 //$tags->title = 'Power';
 //$tags->slug = 'power';
 //$tags->title = '';
-//foreach ($posts as $post){
- //   echo $post->id.'-'.$post->title.'<br>';
+foreach ($posts as $post){
+    echo '<h3>'.$post->id.'-'.$post->title.'</h3><br>';
 //foreach ($post->category as $cat){
 //    echo $cat->title.'-'.$cat->slug;
 //}
-//    foreach ($post->tag as $cat){
-//        echo $cat->title;
-//    }
-//}
+    echo '<ol>';
+    foreach ($post->tag as $tag){
+        echo '<li>'.$tag->title.'</li>';
+    }
+    echo '</ol>';
+}
 //$posts->save();
-print_r($tags->get());
+//print_r($tags->get());
