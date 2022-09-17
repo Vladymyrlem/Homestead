@@ -149,25 +149,34 @@ $new_tag = new Tag();
 //$post3 = Post::find(3);
 //$post3->category()->attach([2]);
 //$post4 = Post::find(4);
-//$post4->category()->attach([5,12,15]);
+//$post4->category()->attach([3]);
 //$post5 = Post::find(5);
-//$post5->category()->attach([6,13,15]);
+//$post5->category()->attach([3]);
 //$post6 = Post::find(6);
-//$post6->category()->attach([12,16,14]);
+//$post6->category()->attach([3]);
 //$post7 = Post::find(7);
-//$post7->category()->attach([4,7,8]);
+//$post7->category()->attach([5]);
 //$post8 = Post::find(8);
-//$post8->category()->attach([7,8,14]);
+//$post8->category()->attach([5]);
 //$post9 = Post::find(9);
-//$post9->tag()->attach([7,14,17]);
+//$post9->category()->attach([4]);
 
 foreach ($posts as $post) {
-    echo '<h3>' . $post->id . ' - ' . $post->title . '</h3>';
+    echo '<h1>' . $post->id . ' - ' . $post->title . '</h1>';
+    echo '<h2>Post Tags</h2>';
     echo '<ol>';
     foreach ($post->tag as $tag) {
         echo '<li>' . $tag->title . '</li>';
     }
     echo '</ol>';
+
+
+    echo '<h2>Post Category</h2>';
+    echo '<ul>';
+    foreach ($post->category as $cat) {
+        echo '<li>' . $cat->title . '</li>';
+    }
+    echo '</ul>';
 }
 
 //print_r($tags->get());
