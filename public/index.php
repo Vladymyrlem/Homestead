@@ -92,8 +92,8 @@ $posts = Post::all();
 /*Creating Tags*/
 $tags = Tag::all();
 $new_tag = new Tag();
-//$tags->title = 'Notebook';
-//$tags->slug = 'notebook';
+$new_tag->title = 'Notebook';
+$new_tag->slug = 'notebook';
 //$tags->title = 'Phone';
 //$tags->slug = 'phone';
 //$tags->title = 'Iphone';
