@@ -1,0 +1,25 @@
+{
+    "name": "vagrant/lesson-6",
+    "description": "Eloquent",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vagrant\\Lesson6\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vladymyr"
+        }
+    ],
+    "require": {
+        "illuminate/events": "^9.30",
+        "illuminate/database": "^9.30"
+    },
+    "config": {
+        "platform": {
+            "php": "8.0.7"
+        }
+    }
+}
