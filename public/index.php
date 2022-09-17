@@ -140,6 +140,8 @@ $new_tag = new Tag();
 //$post1->tag()->attach([7,8,14]);
 //$post1 = Post::find(9);
 //$post1->tag()->attach([7,14,17]);
+
+/*Creating Post Tags*/
 //$post1 = Post::find(1);
 //$post1->category()->attach([1]);
 //$post2 = Post::find(2);
