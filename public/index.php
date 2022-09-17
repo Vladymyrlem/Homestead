@@ -8,7 +8,7 @@ use Vagrant\Lesson6\Models\Tag;
 
 /*Creating categories*/
 $cats = Category::all();
-//$cat1 = new Category();
+$cat1 = new Category;
 //$cat1->title = 'Notebooks';
 //$cat1->slug = 'notebook';
 //$cat1->save();
@@ -28,13 +28,16 @@ $cats = Category::all();
 //$cat5->title = 'Accessories';
 //$cat5->slug = 'accessories';
 //$cat5->save();
+
 /*Update Category*/
 //$update_cat = Category::find(2);
 //$update_cat->title = 'Netbook';
 //$update_cat->slug = 'netbook';
 //$update_cat->save();
+
 /*Delete categories 1-6*/
 //Category::destroy([1,2,3,4,5,6]);
+
 //$posts = new Post([
 //    'title' => 'Asus Taf Gaming F17',
 //    'slug' => 'asus_taf_gaming_f17',
@@ -43,6 +46,7 @@ $cats = Category::all();
 //]);
 $posts = Post::all();
 //$posts = new Post();
+
 /*Creating Post*/
 //$posts->title = 'Asus Taf Gaming F17';
 //$posts->slug = 'asus_taf_gaming_f17';
@@ -84,13 +88,16 @@ $posts = Post::all();
 //$posts->slug = 'bluetooth-aux-mp3-wav-adapter-resiver-magnitoly';
 //$posts->body = 'Bluetooth AUX MP3 WAV адаптер, ресивер магнітоли';
 //$posts->category_id = 4;
+
 /*Update eighth post*/
 //$posts = Post::find(8);
 //$posts->title = 'Перехідник Baseus Exquisite Type-C';
 //$posts->slug = 'perehodnik-baseus-exquisite-type-c-male-to-usb';
 //$posts->body = 'Перехідник Baseus Exquisite Type-C';
+
 /*Delete post number 10*/
 //Post::destroy([10]);
+
 /*Creating Tags*/
 $tags = Tag::all();
 $new_tag = new Tag();
@@ -114,6 +121,7 @@ $new_tag = new Tag();
 //$tags->slug = 'power';
 //$tags->title = '';
 //$new_tag->save();
+
 /*Creating Post Tags*/
 //$post1 = Post::find(1);
 //$post1->tag()->attach([1.10,11]);
@@ -133,6 +141,25 @@ $new_tag = new Tag();
 //$post1->tag()->attach([7,8,14]);
 //$post1 = Post::find(9);
 //$post1->tag()->attach([7,14,17]);
+//$post1 = Post::find(1);
+//$post1->category()->attach([1]);
+//$post2 = Post::find(2);
+//$post2->category()->attach([2]);
+//$post3 = Post::find(3);
+//$post3->category()->attach([2]);
+//$post4 = Post::find(4);
+//$post4->category()->attach([5,12,15]);
+//$post5 = Post::find(5);
+//$post5->category()->attach([6,13,15]);
+//$post6 = Post::find(6);
+//$post6->category()->attach([12,16,14]);
+//$post7 = Post::find(7);
+//$post7->category()->attach([4,7,8]);
+//$post8 = Post::find(8);
+//$post8->category()->attach([7,8,14]);
+//$post9 = Post::find(9);
+//$post9->tag()->attach([7,14,17]);
+
 foreach ($posts as $post) {
     echo '<h3>' . $post->id . ' - ' . $post->title . '</h3>';
     echo '<ol>';
@@ -141,4 +168,5 @@ foreach ($posts as $post) {
     }
     echo '</ol>';
 }
+
 //print_r($tags->get());
