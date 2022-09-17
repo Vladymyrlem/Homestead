@@ -1,7 +1,9 @@
 <?php
 namespace Vagrant\Lesson6\Models;
 use Illuminate\Database\Eloquent\Model;
-class Post
+class Post extends Model
 {
-
+public function category(){
+    return $this->hasMany(Category::class);
+}
 }
