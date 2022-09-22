@@ -7,8 +7,8 @@
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
-            <td colspan="1"  style="text-align: center;"><a href="../" style="font-size: 30px; color: #0099FF">&#11152; back</a></td>
-            <td colspan="6"  style="text-align: center;"><a href="create-category.php" style="font-size: 30px; color: #0099FF">&#43;  Create Category  &#43;</a></td>
+            <td colspan="1"  style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152; back</a></td>
+            <td colspan="6"  style="text-align: center;"><a href="create-category.php" style="font-size: 20px; color: #ffc107"> Create Category</a></td>
         </tr>
         </thead>
         <thead>

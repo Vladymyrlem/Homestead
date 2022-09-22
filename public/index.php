@@ -7,7 +7,11 @@ require_once __DIR__ . '/../config/blade.php';
 echo $blade->make('layout')->render();
 use Vagrant\Lesson6\Models\Post;
 $posts = Post::all();
-
+?>
+<ul class="list-group list-group-flush">
+<?php
 foreach ($posts as $post) {
-    echo '<h1>' . $post->id . ' - ' . $post->title . '</h1>';
+    echo '<li class="list-group-item"><h3>' . $post->id . ' - ' . $post->title . '</h3></li>';
 }
+?>
+</ul>

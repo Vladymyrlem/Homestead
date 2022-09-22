@@ -7,8 +7,8 @@ List Tag
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
-            <td colspan="1"  style="text-align: center;"><a href="../" style="font-size: 30px; color: #0099FF"><- back</a></td>
-            <td colspan="6"  style="text-align: center;"><a href="create-tag.php" style="font-size: 30px; color: #0099FF"> Create tag  </a></td>
+            <td colspan="1"  style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107"><- back</a></td>
+            <td colspan="6"  style="text-align: center;"><a href="create-tag.php" style="font-size: 20px; color: #ffc107"> Create tag  </a></td>
         </tr>
         </thead>
         <thead>
