@@ -37,7 +37,7 @@
                 <label for="slug">Slug</label>
                 <input type="text" class="form-control" id="slug" name="slug" value="{{ $category->slug }}">
             </div>
-            <button type="submit" class="btn btn-primary mt-4">update Category</button>
+            <button type="submit" class="btn btn-primary mt-4">Update category</button>
         </form>
     </div>
 @endsection

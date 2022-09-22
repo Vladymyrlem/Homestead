@@ -1,19 +1,18 @@
 @extends('layout')
 
-
 @section('title')
-  Update Tag
+  Update Tag Value
 @endsection
 
 @section('content')
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
-            <th scope="col">id</th>
-            <th scope="col">title</th>
-            <th scope="col">slug</th>
-            <th scope="col">created_at</th>
-            <th scope="col">updated_at</th>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Slug</th>
+            <th scope="col">Created_at</th>
+            <th scope="col">Updated_at</th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +25,7 @@
         </tr>
         </tbody>
     </table>
-    <div class="container mt-4">
+    <div class="container-fluid mt-4">
         <form action="" method="POST">
             <input type="hidden" id="id" name="id" value="{{ $tag->id }}">
             <div class="form-group">
