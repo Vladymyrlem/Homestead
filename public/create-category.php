@@ -11,3 +11,6 @@ $category->save();
 header('Location:list-categories.php');
 
 }
+/* @var $blade */
+
+echo $blade->make('categories/create')->render();
