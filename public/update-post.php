@@ -5,12 +5,12 @@ require_once __DIR__ . '/../config/blade.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $tag = \Vagrant\Lesson6\Models\Post::find($_POST['id']);
-    $tag->title = $_POST['title'];
-    $tag->slug = $_POST['slug'];
-    $tag->slug = $_POST['body'];
-    $tag->slug = $_POST['category_id'];
-    $tag->save();
+    $post = \Vagrant\Lesson6\Models\Post::find($_POST['id']);
+    $post->title = $_POST['title'];
+    $post->slug = $_POST['slug'];
+    $post->body = $_POST['body'];
+    $post->category_id = $_POST['category_id'];
+    $post->save();
     header('Location:list-posts.php');
 
 } else if (empty($_GET['id'])) {
