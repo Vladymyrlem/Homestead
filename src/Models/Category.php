@@ -1,0 +1,14 @@
+<?php
+
+namespace Vagrant\Lesson8\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Vagrant\Lesson8\Models\Post;
+
+class Category extends Model
+{
+    public function post()
+    {
+        $this->hasMany(Post::class);
+    }
+}
