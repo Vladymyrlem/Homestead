@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-  Update Tag Value
+    Update Tag Value
 @endsection
 
 @section('content')
