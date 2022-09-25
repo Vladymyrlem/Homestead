@@ -19,6 +19,6 @@ $tag = Tag::find($_GET['id']);
 
 /* @var $blade */
 echo $blade->make('tags/update', [
-    'title' => 'Update Category',
+    'title' => 'Update Tag',
     'tag' => $tag
 ])->render();
