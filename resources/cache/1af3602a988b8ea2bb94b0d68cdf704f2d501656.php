@@ -1,8 +1,5 @@
-
-
-
 <?php $__env->startSection('title'); ?>
-    Creating category
+Creating category
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 

@@ -8,10 +8,13 @@ class Router
 {
     public function route(): callable
     {
-        if ($_SERVER['REQUEST_URI'] == '/post') {
         $controller = new PageController();
-            return [$controller,'page'];
+        if ($_SERVER['REQUEST_URI'] == '/contact') {
+            return [$controller, 'contact'];
+        } elseif ($_SERVER['REQUEST_URI'] == '/about') {
+            return [$controller, 'about'];
         }
-        throw  new \Error('Not Found Page');
+
+        throw new \Error('Not found');
     }
 }

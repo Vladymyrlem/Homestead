@@ -1,8 +1,5 @@
-
-
-
 <?php $__env->startSection('title'); ?>
-    Creating post
+Creating post
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 

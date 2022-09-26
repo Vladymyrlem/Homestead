@@ -1,14 +1,16 @@
 @extends('layout')
 
 @section('title')
-List Tag
+    List Tag
 @endsection
 @section('content')
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
-            <td colspan="1"  style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107"><- back</a></td>
-            <td colspan="6"  style="text-align: center;"><a href="create-tag.php" style="font-size: 20px; color: #ffc107"> Create tag  </a></td>
+            <td colspan="1" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107"><-
+                    back</a></td>
+            <td colspan="6" style="text-align: center;"><a href="create-tag.php"
+                                                           style="font-size: 20px; color: #ffc107"> Create tag </a></td>
         </tr>
         </thead>
         <thead>
@@ -30,8 +32,10 @@ List Tag
                 <td>{{ $tag->slug }}</td>
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
-                <td><a class="btn btn-success btn-sm" href="update-tag.php?id={{ $tag->id }}">&#9999;<i class="fa fa-edit"></i></a></td>
-                <td><a class="btn btn-light btn-sm" href="delete-tag.php?id={{ $tag->id }}">&#10060;<i class="fa fa-trash"></i></a></td>
+                <td><a class="btn btn-success btn-sm" href="update-tag.php?id={{ $tag->id }}">&#9999;<i
+                                class="fa fa-edit"></i></a></td>
+                <td><a class="btn btn-light btn-sm" href="delete-tag.php?id={{ $tag->id }}">&#10060;<i
+                                class="fa fa-trash"></i></a></td>
             </tr>
         @endforeach
         </tbody>
