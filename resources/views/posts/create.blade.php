@@ -6,7 +6,7 @@
 @endsection
 @section('content')
 
-    <form action="" method="post">
+    <form action="/posts/store" method="post">
         <div class="form-group">
             <label for="post-name">Post name</label>
             <input id="post-name" type="text" class="form-control" name="title" value="" placeholder="Post Name"/>

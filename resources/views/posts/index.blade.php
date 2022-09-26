@@ -9,7 +9,7 @@
         <tr>
             <td colspan="2" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
                     back</a></td>
-            <td colspan="7" style="text-align: center;"><a href="create-post.php"
+            <td colspan="7" style="text-align: center;"><a href="posts/create"
                                                            style="font-size: 20px; color: #ffc107"> Create Post</a></td>
         </tr>
         </thead>

@@ -5,6 +5,7 @@ namespace Vagrant\Lesson8\Controllers;
 use Vagrant\Lesson8\Models\Post;
 use Illuminate\Http\RedirectResponse;
 
+
 class PostController
 {
     public function index()

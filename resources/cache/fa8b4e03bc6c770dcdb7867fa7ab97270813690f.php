@@ -46,4 +46,4 @@ list categories
 </table>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/test/lesson-8/resources/views/categories/list.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/test/lesson-8/resources/views/categories/index.blade.php ENDPATH**/ ?>

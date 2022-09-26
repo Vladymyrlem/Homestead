@@ -9,7 +9,7 @@
         <tr>
             <td colspan="1" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
                     back</a></td>
-            <td colspan="6" style="text-align: center;"><a href="create-category.php"
+            <td colspan="6" style="text-align: center;"><a href="/categories/create"
                                                            style="font-size: 20px; color: #ffc107"> Create Category</a>
             </td>
         </tr>

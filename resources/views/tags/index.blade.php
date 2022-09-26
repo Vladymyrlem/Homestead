@@ -9,7 +9,7 @@
         <tr>
             <td colspan="1" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107"><-
                     back</a></td>
-            <td colspan="6" style="text-align: center;"><a href="create-tag.php"
+            <td colspan="6" style="text-align: center;"><a href="tags/create"
                                                            style="font-size: 20px; color: #ffc107"> Create tag </a></td>
         </tr>
         </thead>

@@ -10,13 +10,13 @@ class CategoryController
     public function index()
     {
         $categories = Category::all();
-        return view('categories/index', compact('categories'));
+        return view('categories/index', ['categories' => $categories]);
     }
 
     public function show($id)
     {
-        $order = Category::find($id);
-        return view('category/show', compact('categories'));
+        $category = Category::find($id);
+        return view('categories/show', ['category' => $category]);
     }
 
     public function create()

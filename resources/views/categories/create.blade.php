@@ -6,7 +6,7 @@
 @endsection
 @section('content')
 
-    <form action="" method="post">
+    <form action="/categories/store" method="post">
         <div class="form-group">
             <label for="category-name">Category name</label>
             <input id="category-name" type="text" class="form-control" name="title" value=""

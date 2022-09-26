@@ -8,7 +8,7 @@
 
     <div class="container mt-4">
 
-        <form action="" method="post">
+        <form action="/tags/store" method="post">
             <div class="form-group">
                 <label for="tag-name">Tag name</label>
                 <input id="tag-name" type="text" class="form-control" name="title" value="" placeholder="Tag Name"/>
