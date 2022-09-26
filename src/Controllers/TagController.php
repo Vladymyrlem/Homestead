@@ -5,8 +5,6 @@ namespace Vagrant\Lesson8\Controllers;
 use Vagrant\Lesson8\Models\Tag;
 use Illuminate\Http\RedirectResponse;
 
-require_once __DIR__ . '/../config/blade.php';
-
 class TagController
 {
     public function index()
