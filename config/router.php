@@ -25,10 +25,12 @@ function router()
 
     return $router;
 }
-$router->get('/', [CategoryController::class, 'index']);
+
 //  Category
+$router->get('/', [PostController::class, 'index']);
 $router->get('/categories', [CategoryController::class, 'index']);
 $router->get('/categories/create', [CategoryController::class, 'create']);
+$router->get('/categories/{id}', [CategoryController::class, 'show']);
 $router->post('/categories/store', [CategoryController::class, 'store']);
 $router->get('/categories/{id}/edit', [CategoryController::class, 'edit']);
 $router->post('/categories/update', [CategoryController::class, 'update']);
@@ -37,16 +39,17 @@ $router->get('/categories/{id}/delete', [CategoryController::class, 'destroy']);
 //  Category
 $router->get('/tags', [TagController::class, 'index']);
 $router->get('/tags/create', [TagController::class, 'create']);
+$router->get('/tags/{id}', [TagController::class, 'show']);
 $router->post('/tags/store', [TagController::class, 'store']);
 $router->get('/tags/{id}/edit', [TagController::class, 'edit']);
 $router->post('/tags/update', [TagController::class, 'update']);
 $router->get('/tags/{id}/delete', [TagController::class, 'destroy']);
 
 // Post
-$router->get('/post', [PostController::class, 'index']);
-$router->get('/post/{id}/show', [PostController::class, 'show']);
-$router->get('/post/create', [PostController::class, 'create']);
-$router->post('/post/store', [PostController::class, 'store']);
-$router->get('/post/{id}/edit', [PostController::class, 'edit']);
-$router->post('/post/update', [PostController::class, 'update']);
-$router->get('/post/{id}/delete', [PostController::class, 'destroy']);
+$router->get('/posts', [PostController::class, 'index']);
+$router->get('/posts/{id}', [PostController::class, 'show']);
+$router->get('/posts/create', [PostController::class, 'create']);
+$router->post('/posts/store', [PostController::class, 'store']);
+$router->get('/posts/{id}/edit', [PostController::class, 'edit']);
+$router->post('/posts/update', [PostController::class, 'update']);
+$router->get('/posts/{id}/delete', [PostController::class, 'destroy']);

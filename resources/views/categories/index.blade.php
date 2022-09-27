@@ -7,9 +7,9 @@
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
-            <td colspan="1" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
+            <td colspan="2" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
                     back</a></td>
-            <td colspan="6" style="text-align: center;"><a href="/categorн/create"
+            <td colspan="6" style="text-align: center;"><a href="/categories/create"
                                                            style="font-size: 20px; color: #ffc107"> Create Category</a>
             </td>
         </tr>
@@ -23,6 +23,7 @@
             <th scope="col">updated_at</th>
             <th scope="col">update</th>
             <th scope="col">delete</th>
+            <th scope="col">show</th>
         </tr>
         </thead>
         <tbody>
@@ -33,10 +34,12 @@
                 <td>{{ $category->slug }}</td>
                 <td>{{ $category->created_at }}</td>
                 <td>{{ $category->updated_at }}</td>
-                <td><a class="btn btn-success btn-sm" href="{{ $category->id }}/update">&#9999;<i
+                <td><a class="btn btn-success btn-sm" href="categories/{{ $category->id }}/edit">&#9999;<i
                                 class="fa fa-edit"></i></a></td>
-                <td><a class="btn btn-light btn-sm" href="{{ $category->id }}/delete">&#10060;<i
+                <td><a class="btn btn-light btn-sm" href="categories/{{ $category->id }}/delete">&#10060;<i
                                 class="fa fa-trash"></i></a></td>
+                <td><a class="btn btn-light btn-sm" href="categories/{{ $category->id }}">&#10060;<i
+                                class="fa fa-eye"></i></a></td>
             </tr>
         @endforeach
         </tbody>

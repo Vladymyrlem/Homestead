@@ -20,34 +20,37 @@
         </thead>
         <tbody>
         <tr>
-            <th scope="col">{{ $posts->id }}</th>
-            <th scope="col">{{ $posts->title }}</th>
-            <th scope="col">{{ $posts->slug }}</th>
-            <th scope="col">{{ $posts->body }}</th>
-            <th scope="col">{{ $posts->category_id }}</th>
-            <th scope="col">{{ $posts->created_at }}</th>
-            <th scope="col">{{ $posts->updated_at }}</th>
+            <th scope="col">{{ $post->id }}</th>
+            <th scope="col">{{ $post->title }}</th>
+            <th scope="col">{{ $post->slug }}</th>
+            <th scope="col">{{ $post->body }}</th>
+            <th scope="col">@foreach ($post->category as $cat)
+                        <?php echo $cat->title; ?>
+                @endforeach</th>
+            <th scope="col">{{ $post->created_at }}</th>
+            <th scope="col">{{ $post->updated_at }}</th>
         </tr>
         </tbody>
     </table>
     <div class="container mt-4">
-        <form action="" method="POST">
-            <input type="hidden" id="id" name="id" value="{{ $posts->id }}">
+        <form action="/posts/update" method="POST">
+            <input type="hidden" id="id" name="id" value="{{ $post->id }}">
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ $posts->title }}">
+                <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}">
             </div>
             <div class="form-group">
                 <label for="slug">Slug</label>
-                <input type="text" class="form-control" id="slug" name="slug" value="{{ $posts->slug }}">
+                <input type="text" class="form-control" id="slug" name="slug" value="{{ $post->slug }}">
             </div>
             <div class="form-group">
                 <label for="slug">Body</label>
-                <input type="text" class="form-control" id="slug" name="body" value="{{ $posts->body }}">
+                <input type="text" class="form-control" id="slug" name="body" value="{{ $post->body }}">
             </div>
             <div class="form-group">
-                <label for="slug">Category</label>
-                <input type="text" class="form-control" id="slug" name="category" value="{{ $posts->category_id }}">
+                <label for="category_id">Category</label>
+                <input type="text" class="form-control" id="category_id" name="category_id"
+                       value="{{ $post->category_id }}">
             </div>
             <button type="submit" class="btn btn-primary mt-4">Update post</button>
         </form>

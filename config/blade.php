@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\View\Engines\EngineResolver;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\FileViewFinder;

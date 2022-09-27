@@ -2,6 +2,8 @@
 
 namespace Vagrant\Lesson8\Controllers;
 
+use Vagrant\Lesson8\Models\Category;
+use Vagrant\Lesson8\Models\Post;
 use Vagrant\Lesson8\Models\Tag;
 use Illuminate\Http\RedirectResponse;
 
@@ -15,6 +17,9 @@ class TagController
 
     public function show($id)
     {
+        $tag = Category::find($id);
+        $post = Post::all();
+        return view('tags/show', ['tag' => $tag,'post'=> $post]);
     }
 
     public function create()

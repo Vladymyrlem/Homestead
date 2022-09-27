@@ -7,7 +7,7 @@
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
-            <td colspan="1" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107"><-
+            <td colspan="2" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107"><-
                     back</a></td>
             <td colspan="6" style="text-align: center;"><a href="tags/create"
                                                            style="font-size: 20px; color: #ffc107"> Create tag </a></td>
@@ -22,6 +22,7 @@
             <th scope="col">updated_at</th>
             <th scope="col">update</th>
             <th scope="col">delete</th>
+            <th scope="col">show</th>
         </tr>
         </thead>
         <tbody>
@@ -32,10 +33,11 @@
                 <td>{{ $tag->slug }}</td>
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
-                <td><a class="btn btn-success btn-sm" href="{{ $tag->id }}/update">&#9999;<i
+                <td><a class="btn btn-success btn-sm" href="/tags/{{ $tag->id }}/edit">&#9999;<i
                                 class="fa fa-edit"></i></a></td>
-                <td><a class="btn btn-light btn-sm" href="{{ $tag->id }}/delete">&#10060;<i
+                <td><a class="btn btn-light btn-sm" href="/tags/{{ $tag->id }}/delete">&#10060;<i
                                 class="fa fa-trash"></i></a></td>
+                <td><a class="btn btn-light btn-sm" href="/tags/{{ $tag->id }}">Show</a></td>
             </tr>
         @endforeach
         </tbody>

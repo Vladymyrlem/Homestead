@@ -2,8 +2,10 @@
 
 namespace Vagrant\Lesson8\Controllers;
 
+use Vagrant\Lesson8\Models\Category;
 use Vagrant\Lesson8\Models\Post;
 use Illuminate\Http\RedirectResponse;
+use Vagrant\Lesson8\Models\Tag;
 
 
 class PostController
@@ -11,19 +13,19 @@ class PostController
     public function index()
     {
         $posts = Post::all();
-        return view('post/index', compact('posts'));
+        return view('posts/index', compact('posts'));
     }
 
     public function show($id)
     {
         $post = Post::find($id);
-        return view('post/show', compact('post'));
+        return view('posts/show', compact('post'));
     }
 
     public function create()
     {
         $post = new Post();
-        return view('post/form', compact('post'));
+        return view('posts/create', compact('post'));
     }
 
     public function store()
@@ -32,16 +34,19 @@ class PostController
 
         $post = new Post();
         $post->title = $request->input('title');
-        $post->price = $request->input('price');
-        $post->user_id = 1;
+        $post->slug = $request->input('slug');
+        $post->body = $request->input('body');
+        $post->category_id = $request->input('category_id');
         $post->save();
-        return new RedirectResponse('/post');
+        return new RedirectResponse('/posts');
     }
 
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('post/form-edit', compact('post'));
+        $category = Category::all();
+        $tag = Tag::all();
+        return view('posts/update', compact('post', 'category', 'tag'));
     }
 
     public function update()
@@ -49,16 +54,17 @@ class PostController
         $request = request();
         $post = Post::find($request->input('id'));
         $post->title = $request->input('title');
-        $post->price = $request->input('price');
-        $post->user_id = 1;
+        $post->slug = $request->input('slug');
+        $post->body = $request->input('body');
+        $post->category_id = $request->input('category_id');
         $post->save();
-        return new RedirectResponse('/post');
+        return new RedirectResponse('/posts');
     }
 
     public function destroy($id)
     {
         $post = Post::find($id);
         $post->delete();
-        return new RedirectResponse('/post');
+        return new RedirectResponse('/posts');
     }
 }
