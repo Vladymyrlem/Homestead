@@ -33,7 +33,7 @@
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->slug }}</td>
                 <td>{{ $post->body}}</td>
-                <td>{{ $post->category_id}}</td>
+                <td>{{ $post->category->title}}</td>
                 <td>{{ $post->created_at }}</td>
                 <td>{{ $post->updated_at }}</td>
                 <td><a class="btn btn-success btn-sm" href="update-post.php?id={{ $post->id }}">&#9999;<i
