@@ -12,7 +12,8 @@ class TagController
     public function index()
     {
         $tags = Tag::all();
-        return view('tags/index', compact('tags'));
+        $posts = Post::all();
+        return view('tags/index', compact('tags','posts'));
     }
 
     public function show($id)
