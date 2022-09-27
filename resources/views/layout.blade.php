@@ -20,10 +20,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" style="width: 100%" href="list-categories.php">Categories</a>
+                            <a class="nav-link active" style="width: 100%" href="/categories">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="width: 100%" href="list-tags.php">Tags</a>
+                            <a class="nav-link" style="width: 100%" href="/tags">Tags</a>
                         </li>
                     </ul>
                 </div>

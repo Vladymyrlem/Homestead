@@ -32,9 +32,9 @@
                 <td>{{ $tag->slug }}</td>
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
-                <td><a class="btn btn-success btn-sm" href="update-tag.php?id={{ $tag->id }}">&#9999;<i
+                <td><a class="btn btn-success btn-sm" href="{{ $tag->id }}/update">&#9999;<i
                                 class="fa fa-edit"></i></a></td>
-                <td><a class="btn btn-light btn-sm" href="delete-tag.php?id={{ $tag->id }}">&#10060;<i
+                <td><a class="btn btn-light btn-sm" href="{{ $tag->id }}/delete">&#10060;<i
                                 class="fa fa-trash"></i></a></td>
             </tr>
         @endforeach

@@ -25,7 +25,7 @@ function router()
 
     return $router;
 }
-
+$router->get('/', [CategoryController::class, 'index']);
 //  Category
 $router->get('/categories', [CategoryController::class, 'index']);
 $router->get('/categories/create', [CategoryController::class, 'create']);

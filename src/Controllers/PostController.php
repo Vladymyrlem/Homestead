@@ -47,7 +47,6 @@ class PostController
     public function update()
     {
         $request = request();
-
         $post = Post::find($request->input('id'));
         $post->title = $request->input('title');
         $post->price = $request->input('price');
