@@ -34,7 +34,7 @@
                 <td>{{ $tag->slug }}</td>
                 <td>
                     @foreach($tag->post as $post)
-                            <?php echo $post->title.'<br>'; ?>
+                            <?php echo $post->title . '<br>'; ?>
                     @endforeach
                 </td>
                 <td>{{ $tag->created_at }}</td>

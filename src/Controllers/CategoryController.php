@@ -13,7 +13,7 @@ class CategoryController
         $categories = Category::all();
         $posts = Post::all();
 
-        return view('categories/index', compact('categories' ,'posts'));
+        return view('categories/index', compact('categories', 'posts'));
     }
 
     public function show($id)

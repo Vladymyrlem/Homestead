@@ -40,7 +40,7 @@
                     @endforeach
                 </td>
                 <td scope="col">@foreach ($post->tag as $tag)
-                            <?php echo $tag->title.''; ?>
+                            <?php echo $tag->title . ''; ?>
                     @endforeach
                 </td>
                 <td>{{ $post->created_at }}</td>

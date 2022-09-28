@@ -13,14 +13,14 @@ class TagController
     {
         $tags = Tag::all();
         $posts = Post::all();
-        return view('tags/index', compact('tags','posts'));
+        return view('tags/index', compact('tags', 'posts'));
     }
 
     public function show($id)
     {
         $tag = Category::find($id);
         $post = Post::all();
-        return view('tags/show', ['tag' => $tag,'post'=> $post]);
+        return view('tags/show', ['tag' => $tag, 'post' => $post]);
     }
 
     public function create()

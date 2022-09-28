@@ -35,7 +35,7 @@
                 <td>{{ $category->slug }}</td>
                 <td>
                     @foreach($category->posts as $post)
-                            <?php  ?>
+                            <?php ?>
                     @endforeach
                 </td>
                 <td>{{ $category->created_at }}</td>

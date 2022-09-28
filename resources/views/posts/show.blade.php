@@ -23,8 +23,9 @@
             <td scope="col">@foreach ($post->category as $cat)
                         <?php echo $cat->id; ?>
                 @endforeach
-            </td>            <td scope="col">@foreach ($post->tag as $tag)
-                        <?php echo $tag->title.','; ?>
+            </td>
+            <td scope="col">@foreach ($post->tag as $tag)
+                        <?php echo $tag->title . ','; ?>
                 @endforeach
             </td>
             <td scope="col">{{ $post->created_at }}</td>
