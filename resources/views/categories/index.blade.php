@@ -34,8 +34,8 @@
                 <td>{{ $category->title }}</td>
                 <td>{{ $category->slug }}</td>
                 <td>
-                    @foreach($category->post as $post)
-                            <?php echo $post->title.'<br>'; ?>
+                    @foreach($category->posts as $post)
+                            <?php  ?>
                     @endforeach
                 </td>
                 <td>{{ $category->created_at }}</td>
