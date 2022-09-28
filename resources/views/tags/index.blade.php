@@ -18,6 +18,7 @@
             <th scope="col">id</th>
             <th scope="col">title</th>
             <th scope="col">slug</th>
+            <th scope="col">posts</th>
             <th scope="col">created_at</th>
             <th scope="col">updated_at</th>
             <th scope="col">update</th>
@@ -31,6 +32,9 @@
                 <th scope="row">{{ $tag->id }}</th>
                 <td>{{ $tag->title }}</td>
                 <td>{{ $tag->slug }}</td>
+                <td>        @foreach($tag->posts as $post)
+                        {{ $post->title }}
+                    @endforeach</td>
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
                 <td><a class="btn btn-success btn-sm" href="/tags/{{ $tag->id }}/edit">&#9999;<i
