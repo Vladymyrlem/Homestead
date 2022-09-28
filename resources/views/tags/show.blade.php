@@ -20,7 +20,7 @@
             <th scope="col">{{ $tag->created_at }}</th>
             <th scope="col">{{ $tag->updated_at }}</th>
             <th scope="col">
-                @foreach($tag->posts as $post)
+                @foreach($tag->post as $post)
                 {{ $post->title }}
                 @endforeach
             </th>

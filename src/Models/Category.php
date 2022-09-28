@@ -9,6 +9,6 @@ class Category extends Model
 {
     public function post()
     {
-        $this->hasMany(Post::class);
+        $this->belongsToMany(Post::class);
     }
 }

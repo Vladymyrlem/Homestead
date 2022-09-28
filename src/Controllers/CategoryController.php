@@ -4,13 +4,16 @@ namespace Vagrant\Lesson8\Controllers;
 
 use Vagrant\Lesson8\Models\Category;
 use Illuminate\Http\RedirectResponse;
+use Vagrant\Lesson8\Models\Post;
 
 class CategoryController
 {
     public function index()
     {
         $categories = Category::all();
-        return view('categories/index', ['categories' => $categories]);
+        $posts = Post::all();
+
+        return view('categories/index', compact('categories' ,'posts'));
     }
 
     public function show($id)

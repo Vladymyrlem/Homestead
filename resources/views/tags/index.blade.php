@@ -9,7 +9,7 @@
         <tr>
             <td colspan="2" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107"><-
                     back</a></td>
-            <td colspan="6" style="text-align: center;"><a href="tags/create"
+            <td colspan="7" style="text-align: center;"><a href="tags/create"
                                                            style="font-size: 20px; color: #ffc107"> Create tag </a></td>
         </tr>
         </thead>
@@ -32,9 +32,11 @@
                 <th scope="row">{{ $tag->id }}</th>
                 <td>{{ $tag->title }}</td>
                 <td>{{ $tag->slug }}</td>
-                <td>        @foreach($tag->posts as $post)
-                        {{ $post->title }}
-                    @endforeach</td>
+                <td>
+                    @foreach($tag->post as $post)
+                            <?php echo $post->title.'<br>'; ?>
+                    @endforeach
+                </td>
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
                 <td><a class="btn btn-success btn-sm" href="/tags/{{ $tag->id }}/edit">&#9999;<i

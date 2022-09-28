@@ -7,9 +7,9 @@
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
-            <td colspan="2" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
+            <td colspan="3" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
                     back</a></td>
-            <td colspan="6" style="text-align: center;"><a href="/categories/create"
+            <td colspan="7" style="text-align: center;"><a href="/categories/create"
                                                            style="font-size: 20px; color: #ffc107"> Create Category</a>
             </td>
         </tr>
@@ -19,6 +19,7 @@
             <th scope="col">id</th>
             <th scope="col">title</th>
             <th scope="col">slug</th>
+            <th scope="col">posts</th>
             <th scope="col">created_at</th>
             <th scope="col">updated_at</th>
             <th scope="col">update</th>
@@ -32,6 +33,11 @@
                 <th scope="row">{{ $category->id }}</th>
                 <td>{{ $category->title }}</td>
                 <td>{{ $category->slug }}</td>
+                <td>
+                    @foreach($category->post as $post)
+                            <?php echo $post->title.'<br>'; ?>
+                    @endforeach
+                </td>
                 <td>{{ $category->created_at }}</td>
                 <td>{{ $category->updated_at }}</td>
                 <td><a class="btn btn-success btn-sm" href="categories/{{ $category->id }}/edit">&#9999;<i
