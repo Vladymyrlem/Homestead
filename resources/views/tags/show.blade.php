@@ -21,7 +21,7 @@
             <th scope="col">{{ $tag->updated_at }}</th>
             <th scope="col">
                 @foreach($tag->post as $post)
-                    {{ $post->title }}
+                        <?php echo $post->title.'<br>'; ?>
                 @endforeach
             </th>
         </tr>

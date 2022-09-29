@@ -34,8 +34,8 @@
                 <td>{{ $category->title }}</td>
                 <td>{{ $category->slug }}</td>
                 <td>
-                    @foreach($category->posts as $post)
-                            <?php ?>
+                    @foreach($category->post as $post)
+                            <?php echo $post->title.'<br>';?>
                     @endforeach
                 </td>
                 <td>{{ $category->created_at }}</td>
@@ -44,7 +44,7 @@
                                 class="fa fa-edit"></i></a></td>
                 <td><a class="btn btn-light btn-sm" href="categories/{{ $category->id }}/delete">&#10060;<i
                                 class="fa fa-trash"></i></a></td>
-                <td><a class="btn btn-light btn-sm" href="categories/{{ $category->id }}">&#10060;<i
+                <td><a class="btn btn-light btn-sm" href="categories/{{ $category->id }}">show<i
                                 class="fa fa-eye"></i></a></td>
             </tr>
         @endforeach
