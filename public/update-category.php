@@ -3,7 +3,7 @@ require_once '../vendor/autoload.php';
 require_once '../config/database.php';
 require_once '../config/blade.php';
 
-use Vagrant\Lesson6\Models\Category;
+use Vagrant\Lesson7\Models\Category;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $update_category = Category::find($_POST['id']);

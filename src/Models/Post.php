@@ -1,6 +1,6 @@
 <?php
 
-namespace Vagrant\Lesson6\Models;
+namespace Vagrant\Lesson7\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

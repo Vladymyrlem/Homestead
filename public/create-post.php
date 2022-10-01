@@ -3,7 +3,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../config/blade.php';
 
-use Vagrant\Lesson6\Models\Post;
+use Vagrant\Lesson7\Models\Post;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $category = new Post();

@@ -5,7 +5,7 @@ require_once __DIR__ . '/../config/blade.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $post = \Vagrant\Lesson6\Models\Post::find($_POST['id']);
+    $post = \Vagrant\Lesson7\Models\Post::find($_POST['id']);
     $post->title = $_POST['title'];
     $post->slug = $_POST['slug'];
     $post->body = $_POST['body'];
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else if (empty($_GET['id'])) {
     throw new InvalidArgumentException('Error get id value');
 }
-$posts = \Vagrant\Lesson6\Models\Post::find($_GET['id']);
+$posts = \Vagrant\Lesson7\Models\Post::find($_GET['id']);
 
 /* @var $blade */
 echo $blade->make('posts/update', [

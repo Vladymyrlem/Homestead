@@ -7,6 +7,6 @@ if (empty($_GET['id'])) {
     throw new InvalidArgumentException('Error get id value');
 }
 
-$category = \Vagrant\Lesson6\Models\Post::find($_GET['id']);
+$category = \Vagrant\Lesson7\Models\Post::find($_GET['id']);
 $category->delete();
 header('Location:list-posts.php');

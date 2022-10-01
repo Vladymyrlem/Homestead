@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config/blade.php';
 /* @var $blade */
 echo $blade->make('layout')->render();
 
-use Vagrant\Lesson6\Models\Post;
+use Vagrant\Lesson7\Models\Post;
 
 $posts = Post::all();
 ?>

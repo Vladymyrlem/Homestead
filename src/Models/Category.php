@@ -1,9 +1,9 @@
 <?php
 
-namespace Vagrant\Lesson6\Models;
+namespace Vagrant\Lesson7\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Vagrant\Lesson6\Models\Post;
+use Vagrant\Lesson7\Models\Post;
 
 class Category extends Model
 {

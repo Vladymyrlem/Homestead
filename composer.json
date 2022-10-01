@@ -1,11 +1,11 @@
 {
-    "name": "vagrant/lesson-6",
+    "name": "vagrant/lesson-7",
     "description": "Eloquent",
     "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Vagrant\\Lesson6\\": "src/"
+            "Vagrant\\Lesson7\\": "src/"
         }
     },
     "authors": [
