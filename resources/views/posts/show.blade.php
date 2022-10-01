@@ -21,11 +21,11 @@
             <td scope="col">{{ $post->slug }}</td>
             <td scope="col">{{ $post->body }}</td>
             <td scope="col">@foreach ($post->category as $cat)
-                        <?php echo $cat->id; ?>
+                        <?php echo $cat->title.'<br>'; ?>
                 @endforeach
             </td>
             <td scope="col">@foreach ($post->tag as $tag)
-                        <?php echo $tag->title . ','; ?>
+                        <?php echo $tag->title . '<br>'; ?>
                 @endforeach
             </td>
             <td scope="col">{{ $post->created_at }}</td>
