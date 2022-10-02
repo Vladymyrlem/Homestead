@@ -47,14 +47,15 @@
                     @endforeach                </td>
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
-                <td><a class="btn btn-success btn-sm" href="categories/{{ $tag->id }}/edit">&#9999;<i
+                <td><a class="btn btn-success btn-sm" href="tags/{{ $tag->id }}/edit">&#9999;<i
                                 class="fa fa-edit"></i></a></td>
-                <td><a class="btn btn-light btn-sm" href="categories/{{ $tag->id }}/delete">&#10060;<i
+                <td><a class="btn btn-light btn-sm" href="tags/{{ $tag->id }}/delete">&#10060;<i
                                 class="fa fa-trash"></i></a></td>
-                <td><a class="btn btn-light btn-sm" href="categories/{{ $tag->id }}">show<i
+                <td><a class="btn btn-light btn-sm" href="tags/{{ $tag->id }}">show<i
                                 class="fa fa-eye"></i></a></td>
             </tr>
         @endforeach
         </tbody>
     </table>
+
 @endsection

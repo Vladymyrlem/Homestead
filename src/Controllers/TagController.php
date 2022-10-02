@@ -18,9 +18,9 @@ class TagController
 
     public function show($id)
     {
-        $tag = Category::find($id);
+        $tags = Category::find($id);
         $post = Post::all();
-        return view('tags/show', ['tag' => $tag, 'post' => $post]);
+        return view('tags/show', ['tags' => $tags, 'posts' => $post]);
     }
 
     public function create()
@@ -60,35 +60,40 @@ class TagController
     public function edit($id)
     {
         $tag = Tag::find($id);
-        return view('tags/update', compact('tag'));
+        $posts = Post::all();
+        return view('tags/update', compact('tag','posts'));
     }
 
     public function update()
     {
         $data = request()->all();
 
-        $validator = validator()->make($data, [
-            'title' => ['required', 'min:2'],
-            'slug' => ['required', 'min:2'],
-        ]);
+        $tag = Tag::find($data['id']);
+        $tag->title = $data['title'];
+        $tag->slug = $data['slug'];
 
-        if (!is_array($data)) {
-            return $data;
-        }
+        $validator = validator()->make($data, [
+            'title' => [
+                'required',
+                'unique:tags,title',
+                'min:5'
+            ],
+            'slug' => [
+                'required',
+                'unique:tags,slug',
+                'min:5'
+            ]
+        ]);
 
         if ($validator->fails()) {
             $_SESSION['errors'] = $validator->errors()->toArray();
             $_SESSION['data'] = $data;
             return new RedirectResponse($_SERVER['HTTP_REFERER']);
         }
-
-        $tag = new Tag();
-        $tag->title = $data['title'];
-        $tag->slug = $data['slug'];
         $tag->save();
 
         $_SESSION['success'] = 'Запис успішно добавлений';
-        return new RedirectResponse('/tags');
+        return new RedirectResponse('/categories');
     }
 
     public function destroy($id)

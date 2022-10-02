@@ -27,7 +27,7 @@ class CategoryController
     {
         $category = new Category();
         $posts = Post::all();
-        return view('categories/create', compact('category','posts'));
+        return view('categories/create', compact('category', 'posts'));
     }
 
     public function store()
@@ -61,35 +61,39 @@ class CategoryController
     public function edit($id)
     {
         $category = Category::find($id);
-        $postsCheck = $category->post()->where('category_id', $category->id)->get();
+//        $postsCheck = $category->post()->where('category_id', $category->id)->get();
         $posts = Post::all();
-        return view('categories/update', compact('category','posts', 'postsCheck'));
+        return view('categories/form-edit', compact('category', 'posts'));
     }
 
     public function update()
     {
         $data = request()->all();
 
-        $validator = validator()->make($data, [
-            'title' => ['required', 'min:2'],
-            'slug' => ['required', 'min:2'],
-        ]);
+        $category = Category::find($data['id']);
+        $category->title = $data['title'];
+        $category->slug = $data['slug'];
 
-        if (!is_array($data)) {
-            return $data;
-        }
+        $validator = validator()->make($data, [
+            'title' => [
+                'required',
+                'unique:categories,title',
+                'min:5'
+            ],
+            'slug' => [
+                'required',
+                'unique:categories,slug',
+                'min:5'
+            ]
+        ]);
 
         if ($validator->fails()) {
             $_SESSION['errors'] = $validator->errors()->toArray();
             $_SESSION['data'] = $data;
             return new RedirectResponse($_SERVER['HTTP_REFERER']);
         }
-
-        $category = new Category();
-        $category->title = $data['title'];
-        $category->slug = $data['slug'];
         $category->save();
-        $category->post()->attach($data['post']);
+
         $_SESSION['success'] = 'Запис успішно добавлений';
         return new RedirectResponse('/categories');
     }

@@ -32,37 +32,45 @@
     </table>
     <div class="container mt-4">
         <form action="/categories/update" method="POST">
-            <input type="hidden" id="id" name="id" value="{{ $category->id }}">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{  $_SESSION['data']['title'] ??$category->title  }}">
+            <input type="hidden" value="{{ $category->id }}" name="id">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ $category->title }}">
                 @isset($_SESSION['errors']['title'])
-                    @foreach($_SESSION['errors']['title'] as $error)
+                    @foreach($_SESSION['errors']['title'] as $title)
                         <div class="alert alert-danger" role="alert">
-                            {{   $error  }}
+                            {{ $title }}
                         </div>
                     @endforeach
                 @endisset
             </div>
-            <div class="form-group">
-                <label for="slug">Slug</label>
-                <input type="text" class="form-control" id="slug" name="slug" value="{{ $_SESSION['data']['slug'] ?? $category->slug  }}">
+            <div class="mb-3">
+                <label for="slug" class="form-label">Slug</label>
+                <input type="text" class="form-control" id="slug" name="slug" value="{{ $category->slug }}">
                 @isset($_SESSION['errors']['slug'])
-                    @foreach($_SESSION['errors']['slug'] as $error)
+                    @foreach($_SESSION['errors']['slug'] as $slug)
                         <div class="alert alert-danger" role="alert">
-                            {{   $error  }}
+                            {{ $slug }}
                         </div>
                     @endforeach
                 @endisset
             </div>
-{{--            <div class="mt-4 form-floating">--}}
-{{--                <select class="form-select" id="floatingSelect" style="height: 80px;" name="categoryId[]">--}}
-{{--                    @foreach($categories as $category)--}}
-{{--                        <option value="{{ $category->id }}">{{ $category->title }}</option>--}}
-{{--                    @endforeach--}}
-{{--                </select>--}}
-{{--                <label for="floatingSelect">Select category</label>--}}
-{{--            </div>--}}
+            <div class="mb-3">
+                <label for="posts" class="form-label">Post</label>
+                <select multiple aria-label="multiple select example" name="posts[]" id="posts">
+                    @foreach($posts as $post)
+                        <option @if(in_array($post->id, $category->post->pluck('id')->toArray())) selected @endif value="{{ $post->id }}">{{ $post->title }}</option>
+                    @endforeach
+                </select>
+
+                @isset($_SESSION['errors']['$post'])
+                    @foreach($_SESSION['errors']['$post'] as $error)
+                        <div class="alert alert-danger" role="alert">
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endisset
+            </div>
             <button type="submit" class="btn btn-primary mt-4">Update category</button>
         </form>
     </div>
