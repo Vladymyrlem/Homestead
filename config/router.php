@@ -47,8 +47,8 @@ $router->get('/tags/{id}/delete', [TagController::class, 'destroy']);
 
 // Post
 $router->get('/posts', [PostController::class, 'index']);
-$router->get('/posts/{id}', [PostController::class, 'show']);
 $router->get('/posts/create', [PostController::class, 'create']);
+$router->get('/posts/{id}', [PostController::class, 'show'])->whereNumber('id');
 $router->post('/posts/store', [PostController::class, 'store']);
 $router->get('/posts/{id}/edit', [PostController::class, 'edit']);
 $router->post('/posts/update', [PostController::class, 'update']);

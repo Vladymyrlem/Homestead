@@ -36,7 +36,7 @@ class PostController
         $post->title = $request->input('title');
         $post->slug = $request->input('slug');
         $post->body = $request->input('body');
-        $post->category_id = $request->input('category_id');
+        //$post->category_id = $request->input('category_id');
         $post->save();
         return new RedirectResponse('/posts');
     }
