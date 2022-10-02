@@ -4,9 +4,9 @@ use Illuminate\Events\Dispatcher;
 use Illuminate\Container\Container;
 use Illuminate\Routing\Router;
 use Illuminate\Http\Request;
-use Vagrant\Lesson8\Controllers\CategoryController;
-use Vagrant\Lesson8\Controllers\TagController;
-use Vagrant\Lesson8\Controllers\PostController;
+use Vagrant\Lesson9\Controllers\CategoryController;
+use Vagrant\Lesson9\Controllers\TagController;
+use Vagrant\Lesson9\Controllers\PostController;
 
 $request = Request::createFromGlobals();
 

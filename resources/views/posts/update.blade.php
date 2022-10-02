@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <table class="table table-bordered table-hover table-dark">
+    <table class="table table-bordered table-hover table-dark" id="update-table">
         <thead>
         <tr>
             <th scope="col">id</th>
@@ -14,6 +14,7 @@
             <th scope="col">slug</th>
             <th scope="col">body</th>
             <th scope="col">category</th>
+            <th scope="col">tag</th>
             <th scope="col">created_at</th>
             <th scope="col">updated_at</th>
         </tr>
@@ -26,6 +27,9 @@
             <th scope="col">{{ $post->body }}</th>
             <th scope="col">@foreach ($post->category as $cat)
                         <?php echo $cat->title; ?>
+                @endforeach</th>
+            <th scope="col">@foreach ($post->tag as $tag)
+                        <?php echo $tag->title.'<br>'; ?>
                 @endforeach</th>
             <th scope="col">{{ $post->created_at }}</th>
             <th scope="col">{{ $post->updated_at }}</th>
@@ -71,7 +75,7 @@
             <div class="mt-4 form-floating">
                 <select class="form-select" id="floatingSelect" style="height: 80px;" name="categoryId">
                     @foreach($categories as $category)
-                        <option {{ $category->id == $post->category_id? 'selected' : '' }} value="{{ $category->id }}">{{ $category->title }}</option>
+                        <option {{ $category->id == $post->category_id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->title }}</option>
                     @endforeach
                 </select>
                 <label for="floatingSelect">Select category</label>
@@ -79,7 +83,7 @@
             <div class="mt-4 form-floating">
                 <select class="form-select" id="floatingSelect" style="height: 80px;" name="tagId[]" multiple>
                     @foreach($tags as $tag)
-                        <option {{ $post->tags()->where('tag_id', $tag->id)->first()? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
+                        <option {{ $post->tag->where('tag_id', $tag->id)->first()? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
                     @endforeach
                 </select>
                 <label for="floatingSelect">Select tag(s) + ctrl</label>

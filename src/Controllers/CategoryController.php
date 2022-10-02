@@ -89,7 +89,7 @@ class CategoryController
         $category->title = $data['title'];
         $category->slug = $data['slug'];
         $category->save();
-
+        $category->post()->attach($data['post']);
         $_SESSION['success'] = 'Запис успішно добавлений';
         return new RedirectResponse('/categories');
     }

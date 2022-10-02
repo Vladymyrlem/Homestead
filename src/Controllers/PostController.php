@@ -69,9 +69,9 @@ class PostController
     public function edit($id)
     {
         $post = Post::find($id);
-        $category = Category::all();
-        $tag = Tag::all();
-        return view('posts/update', compact('post', 'category', 'tag'));
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('posts/update', compact('post', 'categories', 'tags'));
     }
 
     public function update()
