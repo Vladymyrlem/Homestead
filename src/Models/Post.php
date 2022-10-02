@@ -8,7 +8,7 @@ class Post extends Model
 {
     public function category()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class, 'category_id');
     }
 
     public function tag()
