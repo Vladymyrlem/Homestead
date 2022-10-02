@@ -18,14 +18,14 @@ class PostController
 
     public function show($id)
     {
-        $posts = Post::find($id);
-        return view('posts/show', compact('posts'));
+        $post = Post::find($id);
+        return view('posts/show', compact('post'));
     }
 
     public function create()
     {
-        $posts = new Post();
-        return view('posts/create', compact('posts'));
+        $post = new Post();
+        return view('posts/create', compact('post'));
     }
 
     public function store()
