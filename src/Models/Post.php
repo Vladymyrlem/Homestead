@@ -8,7 +8,7 @@ class Post extends Model
 {
     public function category()
     {
-        return $this->belongsToMany(Category::class)->withTimestamps();
+        return $this->belongsToMany(Category::class);
     }
 
     public function tag()

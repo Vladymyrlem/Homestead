@@ -18,10 +18,10 @@ $blueprint->id();
 $blueprint->string('title');
 $blueprint->string('slug');
 $blueprint->text('body');
-$blueprint->foreignId('category_id');
+//$blueprint->foreignId('category_id');
 $blueprint->timestamps();
 $blueprint->create();
-$blueprint->foreign('category_id')->references('id')->on('categories');
+//$blueprint->foreign('category_id')->references('id')->on('categories');
 $blueprint->build($capsule->getConnection(), new Illuminate\Database\Schema\Grammars\MySqlGrammar());
 
 $blueprint = new Illuminate\Database\Schema\Blueprint('tags');

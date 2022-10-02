@@ -34,7 +34,9 @@
                 <td>{{ $category->title }}</td>
                 <td>{{ $category->slug }}</td>
                 <td>
-                    {{$category->post->pluck('title')->join(',')}}
+                    @foreach($category->post as $post)
+                            <?php echo $post->title . '<br>'; ?>
+                    @endforeach
                 </td>
                 <td>{{ $category->created_at }}</td>
                 <td>{{ $category->updated_at }}</td>

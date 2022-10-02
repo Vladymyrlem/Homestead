@@ -35,11 +35,13 @@
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->slug }}</td>
                 <td>{{ $post->body}}</td>
-                <td> @foreach ($post->category as $cat)
+                <td>
+                    @foreach ($post->category as $cat)
                             <?php echo $cat->title.'<br>'; ?>
                     @endforeach
                 </td>
-                <td scope="col">@foreach ($post->tag as $tag)
+                <td scope="col">
+                    @foreach ($post->tag as $tag)
                             <?php echo $tag->title . '<br>'; ?>
                     @endforeach
                 </td>

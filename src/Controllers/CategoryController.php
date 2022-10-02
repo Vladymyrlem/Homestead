@@ -5,6 +5,7 @@ namespace Vagrant\Lesson8\Controllers;
 use Vagrant\Lesson8\Models\Category;
 use Illuminate\Http\RedirectResponse;
 use Vagrant\Lesson8\Models\Post;
+use Vagrant\Lesson8\Models\Tag;
 
 class CategoryController
 {
@@ -12,7 +13,6 @@ class CategoryController
     {
         $categories = Category::all();
         $posts = Post::all();
-
         return view('categories/index', compact('categories', 'posts'));
     }
 
