@@ -12,8 +12,8 @@ class CategoryController
     public function index()
     {
         $categories = Category::all();
-        $posts = Post::all();
-        return view('categories/index', compact('categories', 'posts'));
+        $post = Post::all();
+        return view('categories/index', compact('categories', 'post'));
     }
 
     public function show($id)
