@@ -27,7 +27,7 @@ class CategoryController
     {
         $category = new Category();
         $posts = Post::all();
-        return view('categories/create', compact('category', 'posts'));
+        return view('categories/form', compact('category', 'posts'));
     }
 
     public function store()

@@ -25,22 +25,6 @@
                 @endforeach
             @endisset
         </div>
-        <div class="mb-3">
-            <label for="posts" class="form-label">Post</label>
-            <select multiple aria-label="multiple select example" name="posts[]" id="posts">
-                @foreach($posts as $post)
-                    <option @if(in_array($post->id, $category->post->pluck('id')->toArray())) selected @endif value="{{ $post->id }}">{{ $post->title }}</option>
-                @endforeach
-            </select>
-
-            @isset($_SESSION['errors']['$post'])
-                @foreach($_SESSION['errors']['$post'] as $error)
-                    <div class="alert alert-danger" role="alert">
-                        {{ $error }}
-                    </div>
-                @endforeach
-            @endisset
-        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     @php

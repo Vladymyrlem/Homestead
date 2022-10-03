@@ -26,7 +26,7 @@ class TagController
     public function create()
     {
         $tag = new Tag();
-        return view('tags/create', compact('tag'));
+        return view('tags/form', compact('tag'));
     }
 
     public function store()
@@ -61,7 +61,7 @@ class TagController
     {
         $tag = Tag::find($id);
         $posts = Post::all();
-        return view('tags/update', compact('tag','posts'));
+        return view('tags/form-edit', compact('tag','posts'));
     }
 
     public function update()
@@ -93,7 +93,7 @@ class TagController
         $tag->save();
 
         $_SESSION['success'] = 'Запис успішно добавлений';
-        return new RedirectResponse('/categories');
+        return new RedirectResponse('/tags');
     }
 
     public function destroy($id)

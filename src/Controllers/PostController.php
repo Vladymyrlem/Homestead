@@ -25,8 +25,10 @@ class PostController
 
     public function create()
     {
-        $post = new Post();
-        return view('posts/create', compact('post'));
+        $posts = new Post();
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('posts/form', compact('posts','categories', 'tags'));
     }
 
     public function store()
@@ -56,10 +58,12 @@ class PostController
         $post->slug = $data['slug'];
         $post->body = $data['body'];
         $post->category_id = $data['category_id'];
+        $post->category()->attach($data['category_id']);
+        $post->tag()->attach($data['tag_id']);
         $post->save();
 
         if (!empty($data['tagId'])) {
-            $post->tags()->sync($data['tagId']);
+            $post->tag()->sync($data['tagId']);
         }
 
         $_SESSION['success'] = 'Запис успішно добавлений';
@@ -68,20 +72,22 @@ class PostController
 
     public function edit($id)
     {
-        $post = Post::find($id);
+        $posts = Post::find($id);
         $categories = Category::all();
         $tags = Tag::all();
-        return view('posts/update', compact('post', 'categories', 'tags'));
+        return view('posts/form-edit', compact('posts', 'categories', 'tags'));
     }
 
     public function update()
     {
         $data = request()->all();
+        $post = Post::find($data['id']);
 
         $validator = validator()->make($data, [
             'title' => ['required', 'min:3'],
             'slug' => ['required', 'min:5'],
             'body' => ['required', 'min:3'],
+            Rule::unique('posts','id')->ignore($post->id),
             'categoryId' => ['required'],
         ]);
 
@@ -94,16 +100,19 @@ class PostController
         if (!is_array($data)) {
             return $data;
         }
-
-        $post = Post::find($data['id']);
         $post->title = $data['title'];
         $post->slug = $data['slug'];
         $post->body = $data['body'];
         $post->category_id = $data['category_id'];
+        $post->tag()->attach($data['tag_id']);
+        $post->category()->attach($data['category_id']);
         $post->save();
 
-        if (!empty($data['tagId'])) {
-            $post->tags()->sync($data['tagId']);
+        if (!empty($data['tag_id'])) {
+            $post->tags()->sync($data['tag_id']);
+        }
+        if (!empty($data['category_id'])) {
+            $post->tags()->sync($data['category_id']);
         }
 
         $_SESSION['success'] = 'Запис успішно добавлений';

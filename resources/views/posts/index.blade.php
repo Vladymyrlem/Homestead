@@ -1,8 +1,6 @@
 @extends('layout')
 
-@section('title')
-    list posts
-@endsection
+@section('title', 'Posts')
 @section('content')
     @isset($_SESSION['success'])
         <div class="alert alert-success" role="alert">
@@ -12,13 +10,14 @@
     @php
         unset($_SESSION['success']);
     @endphp
+    <h1>Post List</h1>
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
-            <td colspan="2" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
-                    back</a></td>
-            <td colspan="9" style="text-align: center;"><a href="posts/create"
-                                                           style="font-size: 20px; color: #ffc107"> Create Post</a></td>
+            <th colspan="2" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
+                    back</a></th>
+            <th colspan="9" style="text-align: center;"><a href="posts/create"
+                                                           style="font-size: 20px; color: #ffc107"> Create Post</a></th>
         </tr>
         </thead>
         <thead>
@@ -37,18 +36,20 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($posts as $post)
+        @forelse($posts as $post)
             <tr>
                 <th scope="row">{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->slug }}</td>
                 <td>{{ $post->body}}</td>
-                <td> @foreach ($post->category as $cat)
-                            <?php echo $cat->title; ?>
+                <td>
+                    @foreach ($post->category as $cat)
+                            <?php echo $cat->title.'<br>'; ?>
                     @endforeach
                 </td>
-                <td scope="col">@foreach ($post->tag as $tag)
-                            <?php echo $tag->title . ''; ?>
+                <td scope="col">
+                    @foreach ($post->tag as $tag)
+                            <?php echo $tag->title . '<br>'; ?>
                     @endforeach
                 </td>
                 <td>{{ $post->created_at }}</td>
@@ -60,7 +61,9 @@
 
                 <td><a class="btn btn-light btn-sm" href="posts/{{ $post->id }}">Show</a></td>
             </tr>
-        @endforeach
+        @empty
+                <p>Empty</p>
+        @endforelse
         </tbody>
     </table>
 @endsection

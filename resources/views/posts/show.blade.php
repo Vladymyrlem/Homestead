@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <table class="table table-bordered table-hover table-dark">
+    <table class="table table-bordered table-hover table-dark" id="post-content-table">
         <thead>
         <tr>
             <th scope="col">id</th>
@@ -16,20 +16,20 @@
         </thead>
         <tbody>
         <tr>
-            <td scope="col">{{ $posts->id }}</td>
-            <td scope="col">{{ $posts->title }}</td>
-            <td scope="col">{{ $posts->slug }}</td>
-            <td scope="col">{{ $posts->body }}</td>
-            <td scope="col">@foreach ($posts->category as $cat)
-                        <?php echo $cat->id; ?>
+            <td scope="col">{{ $post->id }}</td>
+            <td scope="col">{{ $post->title }}</td>
+            <td scope="col">{{ $post->slug }}</td>
+            <td scope="col">{{ $post->body }}</td>
+            <td scope="col">@foreach ($post->category as $cat)
+                        <?php echo $cat->title.'<br>'; ?>
                 @endforeach
             </td>
-            <td scope="col">@foreach ($posts->tag as $tag)
-                        <?php echo $tag->title . ','; ?>
+            <td scope="col">@foreach ($post->tag as $tag)
+                        <?php echo $tag->title . '<br>'; ?>
                 @endforeach
             </td>
-            <td scope="col">{{ $posts->created_at }}</td>
-            <td scope="col">{{ $posts->updated_at }}</td>
+            <td scope="col">{{ $post->created_at }}</td>
+            <td scope="col">{{ $post->updated_at }}</td>
         </tr>
         </tbody>
     </table>
