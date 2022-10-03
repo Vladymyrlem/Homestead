@@ -18,7 +18,7 @@ class CategoryController
     public function show($id)
     {
         $category = Category::find($id);
-        return view('categories/show', ['category' => $category]);
+        return view('categories/show', ['categories' => $category]);
     }
 
     public function create()
