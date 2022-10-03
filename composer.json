@@ -1,0 +1,29 @@
+{
+  "name": "vagrant/lesson-9",
+  "description": "Validation",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Vagrant\\Lesson9\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Vladymyr"
+    }
+  ],
+  "require": {
+    "illuminate/events": "^9.30",
+    "illuminate/database": "^9.30",
+    "illuminate/view": "^9.31",
+    "illuminate/routing": "^v9.31.0",
+    "illuminate/validation": "^9.32",
+    "vlucas/phpdotenv": "^5.4"
+  },
+  "config": {
+    "platform": {
+      "php": "8.0.7"
+    }
+  }
+}
