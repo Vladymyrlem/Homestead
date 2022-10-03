@@ -1,6 +1,24 @@
 @extends('layout')
 
 @section('title', 'Posts')
+
+@section('breadcrumbs')
+    @include('particials.breadcrumbs', [
+        'links'=> [
+            [
+                'link' => '/categories',
+                'name' => 'Category List'
+            ],[
+                'link' => '/tags',
+                'name' => 'Tag List'
+            ], [
+                'link' => '/',
+                'name' => 'Post List'
+            ]
+        ]
+    ])
+@endsection
+
 @section('content')
     @isset($_SESSION['success'])
         <div class="alert alert-success" role="alert">
@@ -43,14 +61,10 @@
                 <td>{{ $post->slug }}</td>
                 <td>{{ $post->body}}</td>
                 <td>
-                    @foreach ($post->category as $cat)
-                            <?php echo $cat->title.'<br>'; ?>
-                    @endforeach
+                    {{$post->category->title}}
                 </td>
-                <td scope="col">
-                    @foreach ($post->tag as $tag)
-                            <?php echo $tag->title . '<br>'; ?>
-                    @endforeach
+                <td>
+                        {{$post->tags->pluck('title')->join(',')}}
                 </td>
                 <td>{{ $post->created_at }}</td>
                 <td>{{ $post->updated_at }}</td>
@@ -62,7 +76,7 @@
                 <td><a class="btn btn-light btn-sm" href="posts/{{ $post->id }}">Show</a></td>
             </tr>
         @empty
-                <p>Empty</p>
+            <p>Empty</p>
         @endforelse
         </tbody>
     </table>

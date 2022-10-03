@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__.'/../vendor/autoload.php';
-require_once __DIR__.'/../config/database.php';
+require_once 'vendor/autoload.php';
+require_once 'config/database.php';
 
 /** @var $capsule */
 
@@ -42,12 +42,3 @@ $blueprint->foreign('post_id')->references('id')->on('posts');
 $blueprint->foreign('tag_id')->references('id')->on('tags');
 $blueprint->build($capsule->getConnection(), new Illuminate\Database\Schema\Grammars\MySqlGrammar());
 
-$blueprint = new Illuminate\Database\Schema\Blueprint('category_post');
-$blueprint->id();
-$blueprint->foreignId('post_id');
-$blueprint->foreignId('category_id');
-$blueprint->timestamps();
-$blueprint->create();
-$blueprint->foreign('post_id')->references('id')->on('posts');
-$blueprint->foreign('category_id')->references('id')->on('categories');
-$blueprint->build($capsule->getConnection(), new Illuminate\Database\Schema\Grammars\MySqlGrammar());

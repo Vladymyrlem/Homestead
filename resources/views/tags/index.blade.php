@@ -1,8 +1,24 @@
 @extends('layout')
 
-@section('title')
-    List Tag
+@section('title', 'Tags')
+
+@section('breadcrumbs')
+    @include('particials.breadcrumbs', [
+        'links'=> [
+            [
+                'link' => '/categories',
+                'name' => 'Category List'
+            ], [
+                'link' => '/',
+                'name' => 'Tag List'
+            ],[
+                'link' => '/posts',
+                'name' => 'Post List'
+            ]
+        ]
+    ])
 @endsection
+
 @section('content')
     @isset($_SESSION['success'])
         <div class="alert alert-success" role="alert">
@@ -12,6 +28,7 @@
     @php
         unset($_SESSION['success']);
     @endphp
+    <h1>Tag List</h1>
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
@@ -35,16 +52,15 @@
             <th scope="col">show</th>
         </tr>
         </thead>
-        <tbody>
-        @foreach($tags as $tag)
+    <tbody>
+        @forelse ($tags as $tag)
             <tr>
                 <th scope="row">{{ $tag->id }}</th>
                 <td>{{ $tag->title }}</td>
                 <td>{{ $tag->slug }}</td>
-                <td>
-                    @foreach($tag->post as $post)
+                <td>  @foreach($tag->post as $post)
                             <?php echo $post->title . '<br>'; ?>
-                    @endforeach                </td>
+                    @endforeach </td>
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
                 <td><a class="btn btn-success btn-sm" href="tags/{{ $tag->id }}/edit">&#9999;<i
@@ -54,8 +70,9 @@
                 <td><a class="btn btn-light btn-sm" href="tags/{{ $tag->id }}">show<i
                                 class="fa fa-eye"></i></a></td>
             </tr>
-        @endforeach
+        @empty
+            <p>Empty</p>
+        @endforelse
         </tbody>
     </table>
-
 @endsection

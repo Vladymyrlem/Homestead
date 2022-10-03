@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <form action="/post/update" method="post">
+    <form action="/posts/update" method="post">
         <input type="hidden" value="{{ $post->id }}" name="id">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
@@ -42,7 +42,7 @@
             <label for="category_id" class="form-label">Category</label>
             <select name="category_id" id="category_id">
                 @foreach($categories as $category)
-                    <option @if($category->id == $posts->category_id) selected @endif value="{{ $category->id }}">{{ $category->title }}</option>
+                    <option @if($category->id == $post->category_id) selected @endif value="{{ $category->id }}">{{ $category->title }}</option>
                 @endforeach
             </select>
 
@@ -56,10 +56,10 @@
         </div>
 
         <div class="mb-3">
-            <label for="tags" class="form-label">Tags</label>
+            <label for="tags" class="form-label">Category</label>
             <select multiple aria-label="multiple select example" name="tags[]" id="tags">
                 @foreach($tags as $tag)
-                    <option @if(in_array($tag->id, $posts->tag->pluck('id')->toArray())) selected @endif value="{{ $tag->id }}">{{ $tag->title }}</option>
+                    <option @if(in_array($tag->id, $post->tags->pluck('id')->toArray())) selected @endif value="{{ $tag->id }}">{{ $tag->title }}</option>
                 @endforeach
             </select>
 

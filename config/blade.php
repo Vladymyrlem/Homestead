@@ -13,10 +13,10 @@ use Illuminate\Http\Response;
 $engineResolver = new EngineResolver();
 $fileSystem = new Filesystem();
 $fileViewFinder = new FileViewFinder(
-    $fileSystem, [__DIR__ . '/../resources/views']
+    $fileSystem, ['../resources/views']
 );
 
-$compiler = new BladeCompiler($fileSystem, __DIR__ . '/../resources/cache');
+$compiler = new BladeCompiler($fileSystem, '../resources/cache');
 $engineResolver->register('blade', function () use ($compiler) {
     return new CompilerEngine($compiler);
 });

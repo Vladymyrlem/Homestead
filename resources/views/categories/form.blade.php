@@ -14,7 +14,7 @@
             @endisset
         </div>
         <div class="mb-3">
-            <label for="slug" class="form-label">Slug</label>
+            <label for="price" class="form-label">Slug</label>
             <input type="text" class="form-control" id="slug" name="slug" value="{{ $_SESSION['data']['slug'] ?? '' }}">
             @isset($_SESSION['errors']['slug'])
                 @foreach($_SESSION['errors']['slug'] as $slug)

@@ -1,17 +1,58 @@
 @extends('layout')
 
-@section('title')
-    list categories
+@section('title', 'Categories')
+
+@section('breadcrumbs')
+    @include('particials.breadcrumbs', [
+        'links'=> [
+            [
+                'link' => '/',
+                'name' => 'Category List'
+            ], [
+                'link' => '/tags',
+                'name' => 'Tag List'
+            ], [
+                'link' => '/posts',
+                'name' => 'Post List'
+            ]
+        ]
+    ])
 @endsection
+
 @section('content')
     @isset($_SESSION['success'])
-        <div class="alert alert-success" role="alert">
-            {{ $_SESSION['success'] }}
-        </div>
+            <div class="alert alert-success" role="alert">
+                {{ $_SESSION['success'] }}
+            </div>
     @endisset
     @php
         unset($_SESSION['success']);
     @endphp
+    <h1>Category List</h1>
+{{--    <table class="table">--}}
+{{--        <thead>--}}
+{{--        <tr>--}}
+{{--            <th scope="col">ID</th>--}}
+{{--            <th scope="col">Title</th>--}}
+{{--            <th scope="col">Slug</th>--}}
+{{--            <th scope="col" colspan="4">Actions</th>--}}
+{{--        </tr>--}}
+{{--        </thead>--}}
+{{--        <tbody>--}}
+{{--        @forelse ($categories as $category)--}}
+{{--            <tr>--}}
+{{--                <th scope="row">{{ $category->id }}</th>--}}
+{{--                <td>{{ $category->title }}</td>--}}
+{{--                <td>{{ $category->slug }}</td>--}}
+{{--                <td><a href="/categories/{{ $category->id }}/edit">UPDATE</a></td>--}}
+{{--                <td><a href="/categories/{{ $category->id }}/delete">DELETE</a></td>--}}
+{{--                <td><a href="/categories/{{ $category->id }}/show">SHOW</a></td>--}}
+{{--            </tr>--}}
+{{--        @empty--}}
+{{--            <p>Empty</p>--}}
+{{--        @endforelse--}}
+{{--        </tbody>--}}
+{{--    </table>--}}
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
@@ -41,9 +82,10 @@
                 <th scope="row">{{ $category->id }}</th>
                 <td>{{ $category->title }}</td>
                 <td>{{ $category->slug }}</td>
-                <td>
-                    {{$category->post->pluck('title')->join(',')}}
-                </td>
+                <td>          @foreach($category->post as $post)
+                            <?php echo $post->title . '<br>'; ?>
+                    @endforeach   </td>
+
                 <td>{{ $category->created_at }}</td>
                 <td>{{ $category->updated_at }}</td>
                 <td><a class="btn btn-success btn-sm" href="categories/{{ $category->id }}/edit">&#9999;<i
