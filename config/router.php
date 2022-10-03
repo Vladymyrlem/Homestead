@@ -27,12 +27,6 @@ function router()
     return $router;
 }
 
-//$router->get('/contact', function () {
-//    return 'contact getgetgetget';
-//});
-
-//$router->get('/contact', [PageController::class, 'contact']);
-
 $router->get('/categories', [CategoryController::class, 'index']);
 $router->get('/categories/{id}/show', [CategoryController::class, 'show']);
 $router->get('/categories/create', [CategoryController::class, 'create']);
