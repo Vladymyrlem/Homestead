@@ -28,15 +28,12 @@ class TagController
         return view('tags/form', compact('tag', 'posts'));
     }
 
-<<<<<<< HEAD
     public function trash()
     {
         $tags = Tag::onlyTrashed()->get();
         return view('tags/trash', compact('tags'));
     }
 
-=======
->>>>>>> 5f35dec (Init Project)
     public function store()
     {
         $data = request()->all();
@@ -117,7 +114,6 @@ class TagController
         $tag->delete();
         return new RedirectResponse('/tags');
     }
-<<<<<<< HEAD
 
     public function restore($id)
     {
@@ -126,6 +122,4 @@ class TagController
             ->restore();
         return new RedirectResponse('/tags');
     }
-=======
->>>>>>> 5f35dec (Init Project)
 }

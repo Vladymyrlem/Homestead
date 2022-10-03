@@ -34,18 +34,12 @@
         <tr>
             <td colspan="3" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
                     back</a></td>
-<<<<<<< HEAD
             <td colspan="5" style="text-align: center;"><a href="/tags/create"
                                                            style="font-size: 20px; color: #ffc107"> Create Tag</a>
             </td>
             <td colspan="2" style="text-align: center;"><a href="/tags/trash"
                                                            style="font-size: 20px; color: #ffc107"> Tags trash</a>
             </td>
-=======
-            <td colspan="7" style="text-align: center;"><a href="/tags/create"
-                                                           style="font-size: 20px; color: #ffc107"> Create Tag</a>
-            </td>
->>>>>>> 5f35dec (Init Project)
         </tr>
         </thead>
         <thead>

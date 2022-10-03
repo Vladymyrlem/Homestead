@@ -30,15 +30,12 @@ class CategoryController
         return view('categories/form', compact('category', 'posts'));
     }
 
-<<<<<<< HEAD
     public function trash()
     {
         $categories = Category::onlyTrashed()->get();
         return view('categories/trash', compact('categories'));
     }
 
-=======
->>>>>>> 5f35dec (Init Project)
     public function store()
     {
         $data = request()->all();
@@ -104,7 +101,6 @@ class CategoryController
         $category->delete();
         return new RedirectResponse('/categories');
     }
-<<<<<<< HEAD
 
     public function restore($id)
     {
@@ -113,6 +109,4 @@ class CategoryController
             ->restore();
         return new RedirectResponse('/categories');
     }
-=======
->>>>>>> 5f35dec (Init Project)
 }

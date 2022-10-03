@@ -29,50 +29,17 @@
         unset($_SESSION['success']);
     @endphp
     <h1>Category List</h1>
-<<<<<<< HEAD
-=======
-    {{--    <table class="table">--}}
-    {{--        <thead>--}}
-    {{--        <tr>--}}
-    {{--            <th scope="col">ID</th>--}}
-    {{--            <th scope="col">Title</th>--}}
-    {{--            <th scope="col">Slug</th>--}}
-    {{--            <th scope="col" colspan="4">Actions</th>--}}
-    {{--        </tr>--}}
-    {{--        </thead>--}}
-    {{--        <tbody>--}}
-    {{--        @forelse ($categories as $category)--}}
-    {{--            <tr>--}}
-    {{--                <th scope="row">{{ $category->id }}</th>--}}
-    {{--                <td>{{ $category->title }}</td>--}}
-    {{--                <td>{{ $category->slug }}</td>--}}
-    {{--                <td><a href="/categories/{{ $category->id }}/edit">UPDATE</a></td>--}}
-    {{--                <td><a href="/categories/{{ $category->id }}/delete">DELETE</a></td>--}}
-    {{--                <td><a href="/categories/{{ $category->id }}/show">SHOW</a></td>--}}
-    {{--            </tr>--}}
-    {{--        @empty--}}
-    {{--            <p>Empty</p>--}}
-    {{--        @endforelse--}}
-    {{--        </tbody>--}}
-    {{--    </table>--}}
->>>>>>> 5f35dec (Init Project)
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
             <td colspan="3" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
                     back</a></td>
-<<<<<<< HEAD
             <td colspan="5" style="text-align: center;"><a href="/categories/create"
                                                            style="font-size: 20px; color: #ffc107"> Create Category</a>
             </td>
             <td colspan="1" style="text-align: center;"><a href="/categories/trash"
                                                            style="font-size: 20px; color: #ffc107"> Categories Trash</a>
             </td>
-=======
-            <td colspan="7" style="text-align: center;"><a href="/categories/create"
-                                                           style="font-size: 20px; color: #ffc107"> Create Category</a>
-            </td>
->>>>>>> 5f35dec (Init Project)
         </tr>
         </thead>
         <thead>

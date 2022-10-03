@@ -54,7 +54,7 @@ unset($_SESSION['success']);
                 <td><?php echo e($post->body); ?></td>
                 <td><?php echo e($post->category_id); ?></td>
                 <td><?php echo e($post->tags->pluck('title')->join(', ')); ?></td>
-                <td><a href="/post/<?php echo e($post->id); ?>/restore">RESTORE</a></td>
+                <td><a href="/posts/<?php echo e($post->id); ?>/restore">RESTORE</a></td>
 
             </tr>
         <?php endforeach;

@@ -24,15 +24,12 @@ class PostController
         return view('posts/show', compact('post'));
     }
 
-<<<<<<< HEAD
     public function trash()
     {
         $posts = Post::onlyTrashed()->get();
-        return view('posts/index', compact('posts'));
+        return view('posts/trash', compact('posts'));
     }
 
-=======
->>>>>>> 5f35dec (Init Project)
     public function create()
     {
         $post = new Post();
@@ -110,7 +107,6 @@ class PostController
         $post->delete();
         return new RedirectResponse('/posts');
     }
-<<<<<<< HEAD
 
     public function restore($id)
     {
@@ -119,6 +115,4 @@ class PostController
             ->restore();
         return new RedirectResponse('/posts');
     }
-=======
->>>>>>> 5f35dec (Init Project)
 }
