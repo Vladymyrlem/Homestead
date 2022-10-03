@@ -1,6 +1,4 @@
 .idea
 .DS_Store
-.env
-hillel_repo
-hillel_repo.pub
 /vendor/*
+lesson-9.rar
