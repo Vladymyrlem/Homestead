@@ -34,10 +34,15 @@
         <tr>
             <th colspan="2" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
                     back</a></th>
+<<<<<<< HEAD
             <th colspan="7" style="text-align: center;"><a href="posts/create"
                                                            style="font-size: 20px; color: #ffc107"> Create Post</a></th>
             <th colspan="2" style="text-align: center;"><a href="posts/trash"
                                                            style="font-size: 20px; color: #ffc107"> Posts Trash</a></th>
+=======
+            <th colspan="9" style="text-align: center;"><a href="posts/create"
+                                                           style="font-size: 20px; color: #ffc107"> Create Post</a></th>
+>>>>>>> 5f35dec (Init Project)
         </tr>
         </thead>
         <thead>

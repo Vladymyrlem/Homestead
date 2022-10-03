@@ -8,6 +8,7 @@
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
+<<<<<<< HEAD
 <header>
     @section('header')
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,6 +35,8 @@
         </nav>
     @show()
 </header>
+=======
+>>>>>>> 5f35dec (Init Project)
 @yield('breadcrumbs')
 
 @yield('content')

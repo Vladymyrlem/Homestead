@@ -1,6 +1,7 @@
 <?php $__env->startSection('title', 'Categories'); ?>
 
 <?php $__env->startSection('breadcrumbs'); ?>
+<<<<<<< HEAD
 <?php echo $__env->make('particials.breadcrumbs', [
     'links' => [
         [
@@ -30,6 +31,59 @@ unset($_SESSION['success']);
     <h1>Category List</h1>
 
 
+=======
+    <?php echo $__env->make('particials.breadcrumbs', [
+        'links'=> [
+            [
+                'link' => '/',
+                'name' => 'Category List'
+            ], [
+                'link' => '/tags',
+                'name' => 'Tag List'
+            ], [
+                'link' => '/posts',
+                'name' => 'Post List'
+            ]
+        ]
+    ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <?php if(isset($_SESSION['success'])): ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo e($_SESSION['success']); ?>
+
+            </div>
+    <?php endif; ?>
+    <?php
+        unset($_SESSION['success']);
+    ?>
+    <h1>Category List</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 5f35dec (Init Project)
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>
@@ -54,14 +108,19 @@ unset($_SESSION['success']);
         </tr>
         </thead>
         <tbody>
+<<<<<<< HEAD
         <?php $__currentLoopData = $categories;
         $__env->addLoop($__currentLoopData);
         foreach ($__currentLoopData as $category): $__env->incrementLoopIndices();
             $loop = $__env->getLastLoop(); ?>
+=======
+        <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+>>>>>>> 5f35dec (Init Project)
             <tr>
                 <th scope="row"><?php echo e($category->id); ?></th>
                 <td><?php echo e($category->title); ?></td>
                 <td><?php echo e($category->slug); ?></td>
+<<<<<<< HEAD
                 <td>          <?php $__currentLoopData = $category->post;
                     $__env->addLoop($__currentLoopData);
                     foreach ($__currentLoopData as $post): $__env->incrementLoopIndices();
@@ -70,6 +129,11 @@ unset($_SESSION['success']);
                     <?php endforeach;
                     $__env->popLoop();
                     $loop = $__env->getLastLoop(); ?>   </td>
+=======
+                <td>          <?php $__currentLoopData = $category->post; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php echo $post->title . '<br>'; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>   </td>
+>>>>>>> 5f35dec (Init Project)
 
                 <td><?php echo e($category->created_at); ?></td>
                 <td><?php echo e($category->updated_at); ?></td>
@@ -80,11 +144,19 @@ unset($_SESSION['success']);
                 <td><a class="btn btn-light btn-sm" href="categories/<?php echo e($category->id); ?>">show<i
                                 class="fa fa-eye"></i></a></td>
             </tr>
+<<<<<<< HEAD
         <?php endforeach;
         $__env->popLoop();
         $loop = $__env->getLastLoop(); ?>
+=======
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+>>>>>>> 5f35dec (Init Project)
         </tbody>
     </table>
 <?php $__env->stopSection(); ?>
 
+<<<<<<< HEAD
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/test/homework10/resources/views/categories/index.blade.php ENDPATH**/ ?>
+=======
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/test/homework10/resources/views/categories/index.blade.php ENDPATH**/ ?>
+>>>>>>> 5f35dec (Init Project)
