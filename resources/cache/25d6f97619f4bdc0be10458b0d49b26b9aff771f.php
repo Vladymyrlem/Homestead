@@ -43,7 +43,8 @@
             <label for="category_id" class="form-label">Category</label>
             <select name="category_id" id="category_id">
                 <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option <?php if($category->id == $post->category_id): ?> selected <?php endif; ?> value="<?php echo e($category->id); ?>"><?php echo e($category->title); ?></option>
+                    <option <?php if($category->id == $post->category_id): ?> selected
+                            <?php endif; ?> value="<?php echo e($category->id); ?>"><?php echo e($category->title); ?></option>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </select>
 
@@ -61,7 +62,8 @@
             <label for="tags" class="form-label">Category</label>
             <select multiple aria-label="multiple select example" name="tags[]" id="tags">
                 <?php $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option <?php if(in_array($tag->id, $post->tags->pluck('id')->toArray())): ?> selected <?php endif; ?> value="<?php echo e($tag->id); ?>"><?php echo e($tag->title); ?></option>
+                    <option <?php if(in_array($tag->id, $post->tags->pluck('id')->toArray())): ?> selected
+                            <?php endif; ?> value="<?php echo e($tag->id); ?>"><?php echo e($tag->title); ?></option>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </select>
 

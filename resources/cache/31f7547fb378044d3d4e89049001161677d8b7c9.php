@@ -64,7 +64,7 @@
 
                 </td>
                 <td>
-                        <?php echo e($post->tags->pluck('title')->join(',')); ?>
+                    <?php echo e($post->tags->pluck('title')->join(',')); ?>
 
                 </td>
                 <td><?php echo e($post->created_at); ?></td>

@@ -19,39 +19,15 @@
 
 <?php $__env->startSection('content'); ?>
     <?php if(isset($_SESSION['success'])): ?>
-            <div class="alert alert-success" role="alert">
-                <?php echo e($_SESSION['success']); ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo e($_SESSION['success']); ?>
 
-            </div>
+        </div>
     <?php endif; ?>
     <?php
         unset($_SESSION['success']);
     ?>
     <h1>Category List</h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <table class="table table-bordered table-hover table-dark">
         <thead>
         <tr>

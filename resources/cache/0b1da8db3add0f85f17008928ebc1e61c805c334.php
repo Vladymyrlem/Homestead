@@ -51,7 +51,7 @@
             <th scope="col">show</th>
         </tr>
         </thead>
-    <tbody>
+        <tbody>
         <?php $__empty_1 = true; $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
             <tr>
                 <th scope="row"><?php echo e($tag->id); ?></th>

@@ -16,10 +16,10 @@
                 'link' => '/',
                 'name' => 'Home'
             ], [
-                'link' => '/./list-categories.php',
+                'link' => '/categories',
                 'name' => 'Category List'
             ], [
-                'link' => '/./list-tags.php',
+                'link' => '/tags',
                 'name' => 'Tag List'
             ]
         ]
