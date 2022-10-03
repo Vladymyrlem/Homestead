@@ -1,4 +1,5 @@
 <?php
+
 namespace Vagrant\Lesson9\Controllers;
 
 use Illuminate\Validation\Rule;
@@ -6,7 +7,6 @@ use Vagrant\Lesson9\Model\Category;
 use Vagrant\Lesson9\Model\Post;
 use Illuminate\Http\RedirectResponse;
 use Vagrant\Lesson9\Model\Tag;
-
 
 
 class PostController
@@ -42,8 +42,7 @@ class PostController
             'category_id' => ['exists:categories,id'],
             'tags' => ['required', 'exists:tags,id']
         ]);
-        if($validator->fails())
-        {
+        if ($validator->fails()) {
             $_SESSION['errors'] = $validator->errors()->toArray();
             $_SESSION['data'] = $data;
             return new RedirectResponse($_SERVER['HTTP_REFERER']);
@@ -77,12 +76,11 @@ class PostController
             'slug' => ['required', 'min:5', 'max:255', 'unique:posts,slug'],
             'body' => ['required', 'min:10'],
             'category_id' => ['exists:categories,id', 'required'],
-            Rule::unique('posts','id')->ignore($post->id),
-            Rule::unique('posts','title')->ignore($post->title),
-            Rule::unique('posts','slug')->ignore($post->slug)
+            Rule::unique('posts', 'id')->ignore($post->id),
+            Rule::unique('posts', 'title')->ignore($post->title),
+            Rule::unique('posts', 'slug')->ignore($post->slug)
         ]);
-        if($validator->fails())
-        {
+        if ($validator->fails()) {
             $_SESSION['errors'] = $validator->errors()->toArray();
             $_SESSION['data'] = $data;
             return new RedirectResponse($_SERVER['HTTP_REFERER']);

@@ -30,7 +30,8 @@
             <label for="posts" class="form-label">Post</label>
             <select multiple aria-label="multiple select example" name="posts[]" id="posts">
                 @foreach($posts as $post)
-                    <option @if(in_array($post->id, $tag->post->pluck('id')->toArray())) selected @endif value="{{ $post->id }}">{{ $post->title }}</option>
+                    <option @if(in_array($post->id, $tag->post->pluck('id')->toArray())) selected
+                            @endif value="{{ $post->id }}">{{ $post->title }}</option>
                 @endforeach
             </select>
 

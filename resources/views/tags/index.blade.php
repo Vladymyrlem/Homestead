@@ -52,7 +52,7 @@
             <th scope="col">show</th>
         </tr>
         </thead>
-    <tbody>
+        <tbody>
         @forelse ($tags as $tag)
             <tr>
                 <th scope="row">{{ $tag->id }}</th>

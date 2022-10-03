@@ -11,7 +11,8 @@ use Vagrant\Lesson9\Controllers\PostController;
 
 $request = Request::createFromGlobals();
 
-function request() {
+function request()
+{
     global $request;
 
     return $request;
@@ -19,7 +20,8 @@ function request() {
 
 $router = new Router(new Dispatcher(), (new Container()));
 
-function router() {
+function router()
+{
     global $router;
 
     return $router;

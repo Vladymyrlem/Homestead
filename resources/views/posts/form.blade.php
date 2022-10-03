@@ -4,7 +4,8 @@
     <form action="/posts/store" method="post">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title" value="{{ $_SESSION['data']['title'] ?? '' }}">
+            <input type="text" class="form-control" id="title" name="title"
+                   value="{{ $_SESSION['data']['title'] ?? '' }}">
             @isset($_SESSION['errors']['title'])
                 @foreach($_SESSION['errors']['title'] as $title)
                     <div class="alert alert-danger" role="alert">
@@ -26,7 +27,8 @@
         </div>
         <div class="input-group">
             <span class="input-group-text">Body</span>
-            <textarea class="form-control" aria-label="With textarea"id="body" name="body" value="{{ $_SESSION['data']['body'] ?? '' }}"></textarea>
+            <textarea class="form-control" aria-label="With textarea" id="body" name="body"
+                      value="{{ $_SESSION['data']['body'] ?? '' }}"></textarea>
             @isset($_SESSION['errors']['body'])
                 @foreach($_SESSION['errors']['body'] as $body)
                     <div class="alert alert-danger" role="alert">

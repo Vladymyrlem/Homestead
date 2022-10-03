@@ -1,4 +1,5 @@
 <?php
+
 namespace Vagrant\Lesson9\Controllers;
 
 use Vagrant\Lesson9\Model\Category;
@@ -12,21 +13,21 @@ class CategoryController
     {
         $categories = Category::all();
         $posts = Post::all();
-        return view('categories/index', compact('categories','posts'));
+        return view('categories/index', compact('categories', 'posts'));
     }
 
     public function show($id)
     {
         $category = Category::find($id);
         $posts = Post::all();
-        return view('categories/show', compact('category','posts'));
+        return view('categories/show', compact('category', 'posts'));
     }
 
     public function create()
     {
         $category = new Category();
         $posts = Post::all();
-        return view('categories/form', compact('category','posts'));
+        return view('categories/form', compact('category', 'posts'));
     }
 
     public function store()
@@ -34,10 +35,9 @@ class CategoryController
         $data = request()->all();
         $validator = validator()->make($data, [
             'title' => ['required', 'min:5', 'max:255'],
-            'slug' => ['required', 'min:5', 'max:255', ]
+            'slug' => ['required', 'min:5', 'max:255',]
         ]);
-        if($validator->fails())
-        {
+        if ($validator->fails()) {
             $_SESSION['errors'] = $validator->errors()->toArray();
             $_SESSION['data'] = $data;
             return new RedirectResponse($_SERVER['HTTP_REFERER']);
