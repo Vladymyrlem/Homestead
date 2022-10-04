@@ -1,32 +1,32 @@
 <?php $__env->startSection('title', 'Tags'); ?>
 
 <?php $__env->startSection('breadcrumbs'); ?>
-    <?php echo $__env->make('particials.breadcrumbs', [
-        'links'=> [
-            [
-                'link' => '/categories',
-                'name' => 'Category List'
-            ], [
-                'link' => '/',
-                'name' => 'Tag List'
-            ],[
-                'link' => '/posts',
-                'name' => 'Post List'
-            ]
+<?php echo $__env->make('particials.breadcrumbs', [
+    'links' => [
+        [
+            'link' => '/categories',
+            'name' => 'Category List'
+        ], [
+            'link' => '/',
+            'name' => 'Tag List'
+        ], [
+            'link' => '/posts',
+            'name' => 'Post List'
         ]
-    ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    ]
+], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-    <?php if(isset($_SESSION['success'])): ?>
-        <div class="alert alert-success" role="alert">
-            <?php echo e($_SESSION['success']); ?>
+<?php if (isset($_SESSION['success'])): ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo e($_SESSION['success']); ?>
 
-        </div>
-    <?php endif; ?>
-    <?php
-        unset($_SESSION['success']);
-    ?>
+    </div>
+<?php endif; ?>
+<?php
+unset($_SESSION['success']);
+?>
     <h1>Tag List</h1>
     <table class="table table-bordered table-hover table-dark">
         <thead>
@@ -55,14 +55,24 @@
         </tr>
         </thead>
         <tbody>
-        <?php $__empty_1 = true; $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+        <?php $__empty_1 = true;
+        $__currentLoopData = $tags;
+        $__env->addLoop($__currentLoopData);
+        foreach ($__currentLoopData as $tag): $__env->incrementLoopIndices();
+            $loop = $__env->getLastLoop();
+            $__empty_1 = false; ?>
             <tr>
                 <th scope="row"><?php echo e($tag->id); ?></th>
                 <td><?php echo e($tag->title); ?></td>
                 <td><?php echo e($tag->slug); ?></td>
-                <td>  <?php $__currentLoopData = $tag->post; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <?php echo $post->title . '<br>'; ?>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> </td>
+                <td>  <?php $__currentLoopData = $tag->post;
+                    $__env->addLoop($__currentLoopData);
+                    foreach ($__currentLoopData as $post): $__env->incrementLoopIndices();
+                        $loop = $__env->getLastLoop(); ?>
+                        <?php echo $post->title . '<br>'; ?>
+                    <?php endforeach;
+                    $__env->popLoop();
+                    $loop = $__env->getLastLoop(); ?> </td>
                 <td><?php echo e($tag->created_at); ?></td>
                 <td><?php echo e($tag->updated_at); ?></td>
                 <td><a class="btn btn-success btn-sm" href="tags/<?php echo e($tag->id); ?>/edit">&#9999;<i
@@ -72,7 +82,10 @@
                 <td><a class="btn btn-light btn-sm" href="tags/<?php echo e($tag->id); ?>">show<i
                                 class="fa fa-eye"></i></a></td>
             </tr>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+        <?php endforeach;
+        $__env->popLoop();
+        $loop = $__env->getLastLoop();
+        if ($__empty_1): ?>
             <p>Empty</p>
         <?php endif; ?>
         </tbody>

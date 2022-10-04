@@ -4,11 +4,15 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-<<<<<<< HEAD
+  <<<<<<<
+  HEAD
   "content-hash": "4786e2265bf8efa465ebe8385aba409c",
-=======
+  =======
   "content-hash": "900d9f546f4be830c6a898d61ae077f2",
->>>>>>> 5f35dec (Init Project)
+  >>>>>>>
+  5f35dec
+  (Init
+  Project)
   "packages": [
     {
       "name": "doctrine/inflector",
@@ -317,7 +321,8 @@
       "time": "2022-02-20T15:07:15+00:00"
     },
     {
-<<<<<<< HEAD
+      <<<<<<<
+      HEAD
       "name": "graham-campbell/result-type",
       "version": "v1.1.0",
       "source": {
@@ -380,8 +385,11 @@
       "time": "2022-07-30T15:56:11+00:00"
     },
     {
-=======
->>>>>>> 5f35dec (Init Project)
+      =======
+      >>>>>>>
+      5f35dec
+      (Init
+      Project)
       "name": "illuminate/bus",
       "version": "v9.33.0",
       "source": {
@@ -1430,7 +1438,8 @@
       "time": "2022-09-02T07:48:13+00:00"
     },
     {
-<<<<<<< HEAD
+      <<<<<<<
+      HEAD
       "name": "phpoption/phpoption",
       "version": "1.9.0",
       "source": {
@@ -1506,8 +1515,11 @@
       "time": "2022-07-30T15:51:26+00:00"
     },
     {
-=======
->>>>>>> 5f35dec (Init Project)
+      =======
+      >>>>>>>
+      5f35dec
+      (Init
+      Project)
       "name": "psr/container",
       "version": "2.0.2",
       "source": {
@@ -3525,7 +3537,8 @@
       "time": "2022-09-08T09:32:44+00:00"
     },
     {
-<<<<<<< HEAD
+      <<<<<<<
+      HEAD
       "name": "vlucas/phpdotenv",
       "version": "v5.4.1",
       "source": {
@@ -3606,8 +3619,11 @@
       "time": "2021-12-12T23:22:04+00:00"
     },
     {
-=======
->>>>>>> 5f35dec (Init Project)
+      =======
+      >>>>>>>
+      5f35dec
+      (Init
+      Project)
       "name": "voku/portable-ascii",
       "version": "2.0.1",
       "source": {

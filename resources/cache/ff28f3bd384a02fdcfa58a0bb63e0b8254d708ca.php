@@ -1,32 +1,32 @@
 <?php $__env->startSection('title', 'Categories'); ?>
 
 <?php $__env->startSection('breadcrumbs'); ?>
-    <?php echo $__env->make('particials.breadcrumbs', [
-        'links'=> [
-            [
-                'link' => '/',
-                'name' => 'Category List'
-            ], [
-                'link' => '/tags',
-                'name' => 'Tag List'
-            ], [
-                'link' => '/posts',
-                'name' => 'Post List'
-            ]
+<?php echo $__env->make('particials.breadcrumbs', [
+    'links' => [
+        [
+            'link' => '/',
+            'name' => 'Category List'
+        ], [
+            'link' => '/tags',
+            'name' => 'Tag List'
+        ], [
+            'link' => '/posts',
+            'name' => 'Post List'
         ]
-    ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    ]
+], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-    <?php if(isset($_SESSION['success'])): ?>
-        <div class="alert alert-success" role="alert">
-            <?php echo e($_SESSION['success']); ?>
+<?php if (isset($_SESSION['success'])): ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo e($_SESSION['success']); ?>
 
-        </div>
-    <?php endif; ?>
-    <?php
-        unset($_SESSION['success']);
-    ?>
+    </div>
+<?php endif; ?>
+<?php
+unset($_SESSION['success']);
+?>
     <h1>Category List</h1>
     <table class="table">
         <thead>
@@ -38,7 +38,12 @@
         </tr>
         </thead>
         <tbody>
-        <?php $__empty_1 = true; $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+        <?php $__empty_1 = true;
+        $__currentLoopData = $categories;
+        $__env->addLoop($__currentLoopData);
+        foreach ($__currentLoopData as $category): $__env->incrementLoopIndices();
+            $loop = $__env->getLastLoop();
+            $__empty_1 = false; ?>
             <tr>
                 <th scope="row"><?php echo e($category->id); ?></th>
                 <td><?php echo e($category->title); ?></td>
@@ -47,7 +52,10 @@
                 <td><a href="/categories/<?php echo e($category->id); ?>/restore">RESTORE</a></td>
 
             </tr>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+        <?php endforeach;
+        $__env->popLoop();
+        $loop = $__env->getLastLoop();
+        if ($__empty_1): ?>
             <p>Empty</p>
         <?php endif; ?>
         </tbody>

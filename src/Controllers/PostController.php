@@ -127,11 +127,13 @@ class PostController
         $post = Post::find($id);
         return view('posts/show', compact('post'));
     }
+
     public function trash()
     {
         $posts = Post::onlyTrashed()->get();
         return view('posts/trash', compact('posts'));
     }
+
     public function create()
     {
         $post = new Post();
@@ -150,8 +152,7 @@ class PostController
             'category_id' => ['exists:categories,id'],
             'tags' => ['required', 'exists:tags,id']
         ]);
-        if($validator->fails())
-        {
+        if ($validator->fails()) {
             $_SESSION['errors'] = $validator->errors()->toArray();
             $_SESSION['data'] = $data;
             return new RedirectResponse($_SERVER['HTTP_REFERER']);
@@ -185,12 +186,11 @@ class PostController
             'slug' => ['required', 'min:5', 'max:255', 'unique:posts,slug'],
             'body' => ['required', 'min:10'],
             'category_id' => ['exists:categories,id', 'required'],
-            Rule::unique('posts','id')->ignore($post->id),
-            Rule::unique('posts','title')->ignore($post->title),
-            Rule::unique('posts','slug')->ignore($post->slug)
+            Rule::unique('posts', 'id')->ignore($post->id),
+            Rule::unique('posts', 'title')->ignore($post->title),
+            Rule::unique('posts', 'slug')->ignore($post->slug)
         ]);
-        if($validator->fails())
-        {
+        if ($validator->fails()) {
             $_SESSION['errors'] = $validator->errors()->toArray();
             $_SESSION['data'] = $data;
             return new RedirectResponse($_SERVER['HTTP_REFERER']);
@@ -211,7 +211,8 @@ class PostController
         $post->delete();
         return new RedirectResponse('/posts');
     }
-        public function restore($id)
+
+    public function restore($id)
     {
         $post = Post::withTrashed()
             ->where('id', $id)
