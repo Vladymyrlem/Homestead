@@ -1,5 +1,4 @@
 <?php
-
 namespace Vagrant\Lesson9\Controllers;
 
 use Vagrant\Lesson9\Model\Post;
@@ -14,7 +13,6 @@ class TagController
         $tags = Tag::all();
         return view('tags/index', compact('tags'));
     }
-
     public function show($id)
     {
         $tag = Tag::find($id);
@@ -25,7 +23,7 @@ class TagController
     {
         $tag = new Tag();
         $posts = Post::all();
-        return view('tags/form', compact('tag', 'posts'));
+        return view('tags/form', compact('tag',  'posts'));
     }
 
     public function store()

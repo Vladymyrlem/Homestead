@@ -60,16 +60,10 @@
                 <td><?php echo e($post->slug); ?></td>
                 <td><?php echo e($post->body); ?></td>
                 <td>
-
-
-
                     <?php echo e($post->category->title); ?>
 
                 </td>
                 <td>
-
-
-
                         <?php echo e($post->tags->pluck('title')->join(',')); ?>
 
                 </td>

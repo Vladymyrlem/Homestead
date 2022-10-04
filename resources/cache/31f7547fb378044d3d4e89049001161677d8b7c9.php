@@ -28,7 +28,7 @@
         unset($_SESSION['success']);
     ?>
     <h1>Post List</h1>
-    <table class="table table-bordered table-hover table-dark">
+    <table class="table table-bordered table-hover table-dark" id="sdfsdf">
         <thead>
         <tr>
             <th colspan="2" style="text-align: center;"><a href="../" style="font-size: 20px; color: #ffc107">&#11152;
