@@ -36,8 +36,9 @@
                     back</a></th>
             <th colspan="7" style="text-align: center;"><a href="posts/create"
                                                            style="font-size: 20px; color: #ffc107"> Create Post</a></th>
-            <th colspan="2" style="text-align: center;"><a href="posts/trash"
-                                                           style="font-size: 20px; color: #ffc107"> Posts Trash</a></th>
+            <th colspan="2" style="text-align: center;"><a href="/posts/trash"
+                                                           style="font-size: 20px; color: #ffc107"> Posts Trash</a>
+            </th>
         </tr>
         </thead>
         <thead>
@@ -66,7 +67,7 @@
                     {{$post->category->title}}
                 </td>
                 <td>
-                    {{$post->tags->pluck('title')->join(',')}}
+                        {{$post->tags->pluck('title')->join(',')}}
                 </td>
                 <td>{{ $post->created_at }}</td>
                 <td>{{ $post->updated_at }}</td>
