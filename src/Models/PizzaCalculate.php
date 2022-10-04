@@ -27,7 +27,7 @@ class PizzaCalculate
                 }
             }
         }
-        return implode(', ', $ingredients);
+        return implode('<br>', $ingredients);
     }
 
     public function price(): float
