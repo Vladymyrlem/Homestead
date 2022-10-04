@@ -32,7 +32,7 @@ class PizzaCalculate
 
     public function price(): float
     {
-$price = 0;
+        $price = 0;
         foreach ($this->getPannier() as $pizza) {
             $price += $pizza->getCost();
         }
