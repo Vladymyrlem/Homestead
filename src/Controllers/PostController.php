@@ -26,10 +26,10 @@ class PostController
 
     public function create()
     {
-        $post = new Post();
+        $posts = new Post();
         $categories = Category::all();
         $tags = Tag::all();
-        return view('posts/form', compact('post', 'categories', 'tags'));
+        return view('posts/form', compact('posts', 'categories', 'tags'));
     }
 
     public function store()
