@@ -7,7 +7,4 @@ $repository = Dotenv\Repository\RepositoryBuilder::createWithNoAdapters()
 
 $dotenv = Dotenv\Dotenv::create($repository, __DIR__ . '/../');
 $dotenv->load();
-
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
+$dotenv->required('DATABASE_NAME')->notEmpty();
