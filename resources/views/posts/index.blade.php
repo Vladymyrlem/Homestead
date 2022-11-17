@@ -36,9 +36,7 @@
                 <td>{{ $post->slug }}</td>
                 <td>{{ $post->body}}</td>
                 <td>
-                    @foreach ($post->category as $cat)
-                            <?php echo $cat->title.'<br>'; ?>
-                    @endforeach
+                    {{$post->category->title}}
                 </td>
                 <td scope="col">
                     @foreach ($post->tag as $tag)

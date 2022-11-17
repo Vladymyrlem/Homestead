@@ -45,6 +45,7 @@ $router->get('/categories/{id}/delete', [CategoryController::class, 'destroy']);
 //$router->post('/tags/update', [TagController::class, 'update']);
 //$router->get('/tags/{id}/delete', [TagController::class, 'destroy']);
 $router->group(['prefix' => 'tags'],function () use ($router) {
+    $router->get('/', [TagController::class, 'index']);
     $router->get('/create', [TagController::class, 'create']);
     $router->get('/{id}', [TagController::class, 'show']);
     $router->post('/store', [TagController::class, 'store']);
