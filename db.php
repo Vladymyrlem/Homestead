@@ -1,7 +1,7 @@
 <?php
 
-require_once 'vendor/autoload.php';
-require_once 'config/database.php';
+require_once '../vendor/autoload.php';
+require_once '../config/database.php';
 
 /** @var $capsule */
 
@@ -18,10 +18,10 @@ $blueprint->id();
 $blueprint->string('title');
 $blueprint->string('slug');
 $blueprint->text('body');
-//$blueprint->foreignId('category_id');
+$blueprint->foreignId('category_id');
 $blueprint->timestamps();
 $blueprint->create();
-//$blueprint->foreign('category_id')->references('id')->on('categories');
+$blueprint->foreign('category_id')->references('id')->on('categories');
 $blueprint->build($capsule->getConnection(), new Illuminate\Database\Schema\Grammars\MySqlGrammar());
 
 $blueprint = new Illuminate\Database\Schema\Blueprint('tags');
@@ -40,14 +40,4 @@ $blueprint->timestamps();
 $blueprint->create();
 $blueprint->foreign('post_id')->references('id')->on('posts');
 $blueprint->foreign('tag_id')->references('id')->on('tags');
-$blueprint->build($capsule->getConnection(), new Illuminate\Database\Schema\Grammars\MySqlGrammar());
-
-$blueprint = new Illuminate\Database\Schema\Blueprint('category_post');
-$blueprint->id();
-$blueprint->foreignId('post_id');
-$blueprint->foreignId('category_id');
-$blueprint->timestamps();
-$blueprint->create();
-$blueprint->foreign('post_id')->references('id')->on('posts');
-$blueprint->foreign('category_id')->references('id')->on('categories');
 $blueprint->build($capsule->getConnection(), new Illuminate\Database\Schema\Grammars\MySqlGrammar());

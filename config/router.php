@@ -37,14 +37,21 @@ $router->post('/categories/update', [CategoryController::class, 'update']);
 $router->get('/categories/{id}/delete', [CategoryController::class, 'destroy']);
 
 //  Category
-$router->get('/tags', [TagController::class, 'index']);
-$router->get('/tags/create', [TagController::class, 'create']);
-$router->get('/tags/{id}', [TagController::class, 'show']);
-$router->post('/tags/store', [TagController::class, 'store']);
-$router->get('/tags/{id}/edit', [TagController::class, 'edit']);
-$router->post('/tags/update', [TagController::class, 'update']);
-$router->get('/tags/{id}/delete', [TagController::class, 'destroy']);
-
+//$router->get('/tags', [TagController::class, 'index']);
+//$router->get('/tags/create', [TagController::class, 'create']);
+//$router->get('/tags/{id}', [TagController::class, 'show']);
+//$router->post('/tags/store', [TagController::class, 'store']);
+//$router->get('/tags/{id}/edit', [TagController::class, 'edit']);
+//$router->post('/tags/update', [TagController::class, 'update']);
+//$router->get('/tags/{id}/delete', [TagController::class, 'destroy']);
+$router->group(['prefix' => 'tags'],function () use ($router) {
+    $router->get('/create', [TagController::class, 'create']);
+    $router->get('/{id}', [TagController::class, 'show']);
+    $router->post('/store', [TagController::class, 'store']);
+    $router->get('/{id}/edit', [TagController::class, 'edit']);
+    $router->post('/update', [TagController::class, 'update']);
+    $router->get('/{id}/delete', [TagController::class, 'destroy']);
+});
 // Post
 $router->get('/posts', [PostController::class, 'index']);
 $router->get('/posts/create', [PostController::class, 'create']);

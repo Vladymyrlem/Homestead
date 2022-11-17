@@ -16,20 +16,20 @@
         </thead>
         <tbody>
         <tr>
-            <td scope="col">{{ $post->id }}</td>
-            <td scope="col">{{ $post->title }}</td>
-            <td scope="col">{{ $post->slug }}</td>
-            <td scope="col">{{ $post->body }}</td>
-            <td scope="col">@foreach ($post->category as $cat)
-                        <?php echo $cat->title.'<br>'; ?>
-                @endforeach
-            </td>
-            <td scope="col">@foreach ($post->tag as $tag)
-                        <?php echo $tag->title . '<br>'; ?>
-                @endforeach
-            </td>
-            <td scope="col">{{ $post->created_at }}</td>
-            <td scope="col">{{ $post->updated_at }}</td>
+{{--            <td scope="col">{{ $post->id }}</td>--}}
+{{--            <td scope="col">{{ $post->title }}</td>--}}
+{{--            <td scope="col">{{ $post->slug }}</td>--}}
+{{--            <td scope="col">{{ $post->body }}</td>--}}
+{{--            <td scope="col">@foreach ($post->category as $cat)--}}
+{{--                        <?php echo $cat->title.'<br>'; ?>--}}
+{{--                @endforeach--}}
+{{--            </td>--}}
+{{--            <td scope="col">@foreach ($post->tag as $tag)--}}
+{{--                        <?php echo $tag->title . '<br>'; ?>--}}
+{{--                @endforeach--}}
+{{--            </td>--}}
+{{--            <td scope="col">{{ $post->created_at }}</td>--}}
+{{--            <td scope="col">{{ $post->updated_at }}</td>--}}
         </tr>
         </tbody>
     </table>
